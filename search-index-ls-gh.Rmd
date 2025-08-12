@@ -70,38 +70,21 @@ filter_out_list <- c(
 )
 
 # 48 consecutive months starting July 2021
-live_shop_related_df <- live_shopping_search_dataset %>% 
-  filter(str_detect(keyword, PATTERN_SHOP)) %>%
-  filter(lengths(searches_past_months) > 0) %>% 
-  arrange(desc(avg_monthly_searches)) %>% 
-  filter(avg_monthly_searches > 0) %>% 
-  filter(!keyword %in% filter_out_list)
+live_shop_grouped_by_month <- prepare_monthly_totals(
+  dataset = live_shopping_search_dataset,
+  keyword_pattern = PATTERN_SHOP,
+  filter_out = filter_out_list,
+  start_month = START_MONTH,
+  months = 48
+)
 
-live_shop_longer <- live_shop_related_df %>% 
-  unnest_longer(searches_past_months) %>% 
-  ungroup()
-
-months_vec <- seq(ymd(START_MONTH), by = "month", length.out = 48)
-
-live_shop_all_by_month <- live_shop_longer %>%   
-  mutate(month = rep(months_vec, len = nrow(live_shop_longer)))
-
-live_shop_grouped_by_month <- live_shop_all_by_month %>%
-  group_by(month) %>% 
-  summarise(total_monthly_searches = sum(searches_past_months)) %>%
-  mutate(
-    month_label = format(month, "%m-%Y"),
-    month_end = ceiling_date(month, "month") - days(1)
-  )
+index_df <- compute_index(live_shop_grouped_by_month)
 ```
 
 ## Search index 100 norm
 
 ```{r}
-base_value <- live_shop_grouped_by_month$total_monthly_searches[1]
-
-index_df <- live_shop_grouped_by_month %>%
-  mutate(index_value = (total_monthly_searches / base_value) * 100)
+# index_df already computed via compute_index()
 ```
 
 ## Live shop
@@ -203,34 +186,15 @@ save_for_report(
 ## Live sell
 
 ```{r}
-live_sell_related_df <- live_shopping_search_dataset %>% 
-  filter(str_detect(keyword, PATTERN_SELL)) %>%
-  filter(lengths(searches_past_months) > 0) %>% 
-  arrange(desc(avg_monthly_searches)) %>% 
-  filter(avg_monthly_searches > 0) %>% 
-  filter(!keyword %in% filter_out_list)
+live_sell_grouped_by_month <- prepare_monthly_totals(
+  dataset = live_shopping_search_dataset,
+  keyword_pattern = PATTERN_SELL,
+  filter_out = filter_out_list,
+  start_month = START_MONTH,
+  months = 48
+)
 
-live_sell_longer <- live_sell_related_df %>% 
-  unnest_longer(searches_past_months) %>% 
-  ungroup()
-
-months_vec <- seq(ymd(START_MONTH), by = "month", length.out = 48)
-
-live_sell_all_by_month <- live_sell_longer %>%   
-  mutate(month = rep(months_vec, len = nrow(live_sell_longer)))
-
-live_sell_grouped_by_month <- live_sell_all_by_month %>%
-  group_by(month) %>% 
-  summarise(total_monthly_searches = sum(searches_past_months)) %>%
-  mutate(
-    month_label = format(month, "%m-%Y"),
-    month_end = ceiling_date(month, "month") - days(1)
-  )
-
-base_value <- live_sell_grouped_by_month$total_monthly_searches[1]
-
-index_df <- live_sell_grouped_by_month %>%
-  mutate(index_value = (total_monthly_searches / base_value) * 100)
+index_df <- compute_index(live_sell_grouped_by_month)
 ```
 
 ```{r}
