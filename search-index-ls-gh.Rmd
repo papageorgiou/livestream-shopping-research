@@ -24,13 +24,12 @@ source("funcs.R")
 ## Read data
 
 ```{r}
-# df_full_api <- py_load_object(filename = "data/gen2/final_df_gapi_liveshop_10kseeds.pkl")
-# 
-# df_distinct_kw <- df_full_api %>% 
-#   select(keyword, avg_monthly_searches, searches_past_months) %>%  
-#   distinct(avg_monthly_searches, searches_past_months, .keep_all = TRUE)
-# 
-# reticulate::py_save_object(df_distinct_kw, "whatnot.pkl")
+df_full_api <- py_load_object(filename = "data/gen2/final_df_gapi_liveshop_10kseeds.pkl")
+
+df_distinct_kw <- df_full_api %>%
+  select(keyword, avg_monthly_searches, searches_past_months) %>%
+  distinct(avg_monthly_searches, searches_past_months, .keep_all = TRUE)
+
 ```
 
 ## Read data
