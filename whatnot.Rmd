@@ -1,0 +1,179 @@
+---
+title: "whatnot"
+author: "Alex Papageorgiou"
+date: "1/28/2022"
+output: html_document
+---
+
+
+```{r}
+library(tidyverse)
+library(scales)
+library(ggrepel)
+library(gghighlight)
+library(ggthemes)
+library(viridis)
+library(patchwork)
+library(ggtext)
+
+
+source("funcs.R")
+
+
+
+```
+
+
+```{r}
+
+terms <-
+  c(
+    "whatnot",
+    "whatnot app",
+    "whatnot com",
+    "whatnot streaming",
+    "whatnot shopping",
+    "whatnot selling",
+    "whatnot live",
+    "whatnot live stream",
+    "whatnot platform"
+  )
+
+
+rolling <-
+  readRDS("../livestream-shopping-research/shiny-output-10k/rolling.rds")
+
+
+df_viz <- rolling %>%  filter(keyword %in% terms) %>%
+  mutate(keyword = fct_reorder2(
+    keyword,
+    year,
+    roll_avg_round,
+    .fun = function(x, y)
+      max(y)
+  ))
+
+```
+
+
+
+
+
+
+```{r}
+
+
+my_title <- "2025 Fastest-Growing Theme in Live Shopping: Whatnot"
+my_subtitle <-
+  "Analysis based on Google search data containing over 80,000 related search expressions"
+
+
+title_html <- str_replace(
+  my_title,
+  regex("\\bWhatnot\\b", ignore_case = TRUE),
+  "<span style='font-weight:700; color:#FFF351; background-color:#gggggg; padding:1px 3px;'>\\0</span>"
+)
+
+
+p1 <-
+  plot_by_category(
+    data = df_viz,
+    my_title = my_title,
+    my_subtitle = my_subtitle,
+    n_rows = 3,
+    colour_facet_group = "keyword",
+    my_caption = NULL
+  ) + my_social_theme() #+ theme( plot.title = element_markdown(lineheight = 1.05))
+
+p1
+
+```
+
+```{r}
+whatnot_gmv <- tribble(
+  ~date,   ~amount_billions, 
+  "2020-01-01",  0.1, 
+  "2023-01-01", 1.5, 
+  "2024-01-01",  3, 
+  "2025-01-01", 6 
+) %>%
+  mutate(
+    date = ymd(date),
+    year_month = format(date, "%b %Y")
+  )
+
+```
+
+
+
+```{r}
+
+
+p2 <-
+  ggplot(whatnot_gmv, aes(x = date, y = amount_billions, group = 1)) +
+  geom_line(size = 2, color = "#FFF351") +
+  
+  geom_point(
+    size = 2,
+    color = "black",
+    fill = "white",
+    shape = 21
+  ) +
+  geom_text(aes(label = paste0("$", amount_billions, "B")),
+            vjust = 0,
+            hjust = 1.5,
+            size = 3.5) +
+  #geom_point(size = 3) +  # helps verify alignment
+  scale_y_continuous(labels = scales::dollar_format(suffix = "B")) +
+  scale_x_date(#limits = range(whatnot_gmv$date),
+    #breaks = whatnot_gmv$date,
+    labels = scales::label_date("%Y"),
+    expand = expansion(mult = c(0.02, 0.02))) +
+  labs(
+    title = "Whatnot Yearly Gross Merchandise Value",
+    x = NULL,
+    y = NULL,
+    caption = "\n          Source: Google Ads API (keyword planning service), July 2021-June 2025. Data retrieved July 2025.\n          Whatnot GMV data are estimates based on public announcements.\n          Data and methodology: github.com/papageorgiou/live-shopping-research"
+  ) +
+  my_social_theme() +
+  theme(
+    plot.caption = element_text(
+      hjust = 0,
+      size = 11,
+      face = "italic",
+      color = "grey60"
+    ),
+    # 0 = left, 0.5 = center, 1 = right
+    plot.caption.position = "plot",
+    plot.title = element_markdown(lineheight = 1.05)
+  )
+
+ 
+  
+p2
+
+
+```
+
+
+
+```{r}
+
+final <- p1/p2 + plot_layout(nrow = 2, heights=c(3,1))
+
+final
+
+```
+
+```{r}
+
+save_for_report(
+  filename = "whatnot.png",  
+  width_mm = 230, 
+  height_mm = 300, 
+  dpi = 600
+)
+
+```
+
+
