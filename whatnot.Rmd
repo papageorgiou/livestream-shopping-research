@@ -58,14 +58,12 @@ df_viz <- rolling %>%  filter(keyword %in% terms) %>%
 
 
 
-
-
 ```{r}
 
 
-my_title <- "2025 Fastest-Growing Theme in Live Shopping: Whatnot"
+my_title <- "Fastest-Growing Theme in Live Shopping 2025: Whatnot"
 my_subtitle <-
-  "Analysis based on Google search data containing over 80,000 related search expressions"
+  "Based on Google search data containing over 80,000 related search expressions"
 
 
 title_html <- str_replace(
@@ -120,7 +118,7 @@ p2 <-
     shape = 21
   ) +
   geom_text(aes(label = paste0("$", amount_billions, "B")),
-            vjust = 0,
+            vjust = 0.5,
             hjust = 1.5,
             size = 3.5) +
   #geom_point(size = 3) +  # helps verify alignment
@@ -130,7 +128,7 @@ p2 <-
     labels = scales::label_date("%Y"),
     expand = expansion(mult = c(0.02, 0.02))) +
   labs(
-    title = "Whatnot Yearly Gross Merchandise Value",
+    title = "Whatnot: Yearly Gross Merchandise Value",
     x = NULL,
     y = NULL,
     caption = "\n          Source: Google Ads API (keyword planning service), July 2021-June 2025. Data retrieved July 2025.\n          Whatnot GMV data are estimates based on public announcements.\n          Data and methodology: github.com/papageorgiou/live-shopping-research"
@@ -169,8 +167,8 @@ final
 
 save_for_report(
   filename = "whatnot.png",  
-  width_mm = 230, 
-  height_mm = 300, 
+  width_mm = 220, 
+  height_mm = 255, 
   dpi = 600
 )
 
