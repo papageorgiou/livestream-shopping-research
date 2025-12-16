@@ -26,7 +26,7 @@ reticulate::use_condaenv("genenv")
 ## Read data
 
 ```{r}
- df_full_api <- py_load_object(filename = "data/gen2/final_df_gapi_liveshop_10kseeds.pkl")
+# df_full_api <- py_load_object(filename = "data/gen2/final_df_gapi_liveshop_10kseeds.pkl")
 # 
 # df_distinct_kw <- df_full_api %>%
 #   select(keyword, avg_monthly_searches, searches_past_months) %>%
@@ -58,10 +58,20 @@ month_levels <- format(
   "%b %Y"
 )
 
-jul_nov_25 <- c(6160,	5560,	5560,	7250,	7230)
 
 
 ```
+
+## Addition of recent months (July - Nov 2025)
+
+Search volumes from live Google keyword planner tool (csv version available in repo)
+
+```{r}
+jul_nov_25 <- c(6160,	5560,	5560,	7250,	7230)
+
+```
+
+
 
 ```{r}
 # Bot activity detected
@@ -102,7 +112,7 @@ total_monthly_searches <- jul_nov_25
 
 df_to_join <- tibble(month, total_monthly_searches)
 
-live_shop_grouped_by_month <-  live_shop_grouped_by_month %>% bind_rows(df_to_join) %>% 
+live_shop_grouped_by_month <-  live_shop_grouped_by_month_48 %>% bind_rows(df_to_join) %>% 
   mutate(
     month_label = format(month, "%m-%Y"),
     month_end = ceiling_date(month, "month") - days(1)
@@ -120,8 +130,7 @@ index_df <- live_shop_grouped_by_month %>%
 
 ## Live shop
 
-2024: 5717
-2025: 8392
+
 
 ```{r}
 title_shop <- "US Live Shopping Regains Momentum in 2025"
@@ -132,15 +141,18 @@ title_html <- str_replace(
   "<span style='font-weight:700; color:#CD0000; background-color:#gggggg; padding:1px 3px;'>\\0</span>"
 )
 
-sub_shop <- "Average monthly search activity is up ~50% compared to 2024. This follows a slowdown after Meta discontinued live shopping features in 2022-2023
-\nMetric: Search interest index for Live Shopping (LS)"
+# 2024 avg: 5717
+# 2025 avg: 8392
+
+sub_shop <- "Avg. monthly searches are up ~ 50% compared to 2024, following a slowdown after Meta discontinued live shopping in 2022. \nMetric: Search interest index for Live Shopping (LS), July 2021 = 100"
 
 
 sub_shop_2 <- "Following a slowdown after Meta discontinued live shopping features in 2022-2023 
-\nMetric: Search interest index for Live Shopping (LS)"
+\nMetric: Search interest index for Live Shopping (LS), July 2021 = 100"
 # sub_shop <- "INTERNAL USE: Unfiltered graph includes search volumes subject to potential bot activity in certain months"
 
-caption_shop <- "\n\nIndex based on normalized U.S. search volume across 188 live shopping-related queries (July 2021 = 100). \nSource: Google Ads API (keyword planning service), July 2021-November 2025. Data retrieved December 2025. \nData, methodology & reproducible code: github.com/papageorgiou/live-shopping-research"
+caption_shop <- "\n\nIndex based on normalized U.S. search volume across 188 live shopping-related queries (July 2021 = 100). \nSource: Google Ads API (keyword planning service), July 2021-November 2025. Data retrieved in July 2025 and December 2025." 
+#\nData, methodology & reproducible code: github.com/papageorgiou/live-shopping-research"
 ```
 
 ```{r}
@@ -206,9 +218,10 @@ ggplot(index_df, aes(x = month_end, y = index_value)) +
     inherit.aes = FALSE
   ) + 
   theme(
-    plot.caption = element_text(hjust = 0.3, size=15, face="italic"),   # 0 = left, 0.5 = center, 1 = right
-    #plot.caption.position = "plot",           # place caption against the plot edge
-    plot.title = element_markdown(lineheight = 1.05)
+    plot.caption = element_text(hjust = 0, size=16, face="italic", margin = margin(t=20)),   # 0 = left, 0.5 = center, 1 = right
+    plot.caption.position = "panel",           # place caption against the plot edge
+    plot.title = element_markdown(lineheight = 1.05), plot.subtitle = element_text(size=21),
+    axis.text.x = element_text(face="bold")
   )
 
 
@@ -217,8 +230,8 @@ ggplot(index_df, aes(x = month_end, y = index_value)) +
 
 ```{r}
 save_for_report(
-  filename = "live_shopping_annot_600dpi_dec2025.png",  
-  width_mm = 450, 
+  filename = "live_shopping_annot_600dpi_202512.png",  
+  width_mm = 425, 
   height_mm = 200, 
   dpi = 600
 )
