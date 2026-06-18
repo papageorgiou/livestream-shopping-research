@@ -9,7 +9,7 @@
 # 2026 pipeline raw artifacts (huge; regenerable from scripts)
 output-2026/
 report-2026/.qa/
-report-2026/*.typ
+report-2026/live-shopping-2026.typ
 __pycache__/
 .venv/
 .DS_Store
