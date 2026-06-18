@@ -1,0 +1,24 @@
+color:
+  palette:
+    red: "#CD0000"
+    reddark: "#A30000"
+    yellow: "#F2C200"
+    whatnot: "#FFF351"
+    ink: "#3C3C3C"
+    graymid: "#B0B0B0"
+    graylight: "#EDEDED"
+    paper: "#FFFFFF"
+  primary: red
+  foreground: ink
+  background: paper
+
+typography:
+  base:
+    family: "Helvetica Neue"
+    size: 10pt
+  headings:
+    family: "Helvetica Neue"
+    weight: bold
+    color: ink
+  monospace:
+    family: "Menlo"

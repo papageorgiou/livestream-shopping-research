@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.csv
+*.pkl
+*.rds
+*.parquet
+# 2026 pipeline raw artifacts (huge; regenerable from scripts)
+output-2026/
+report-2026/.qa/
+report-2026/*.typ
+__pycache__/
+.venv/
+.DS_Store
