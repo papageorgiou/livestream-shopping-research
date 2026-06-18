@@ -11,8 +11,10 @@ abstract: |
   2025 US TikTok ban drama. This report rebuilds the live-shopping and live-selling search
   indices from a fresh pull of ~80,000 keywords (Google Ads Keyword Planner, June 2022 - May
   2026, US only), re-examines every angle from the prior edition, and adds new ones: a
-  platform-rotation view, the rise of category-native challengers, the trading-card-led
-  vertical story, and an empirical look at trust ("is it legit?") and the supply side.
+  platform-rotation and share-of-search view, the rise (and fall) of category-native
+  challengers, the trading-card-led vertical story, a lead-lag test showing sellers move first,
+  the commercial value advertisers place on each audience, a device-mix read, and an empirical
+  look at trust ("is it legit?") and how the category's questions are maturing.
 date-format: "MMMM YYYY"
 format:
   typst:
@@ -55,6 +57,39 @@ format:
 - **Collectibles still lead, but the mix is broadening.** Trading cards / breaks dominate
   live-shopping vertical search (+135% over the window), while Whatnot's own reporting shows
   beauty, electronics, jewelry and women's fashion as its fastest-growing GMV categories.
+
+{{< pagebreak >}}
+
+# Fifteen things that surprised us
+
+A quick-reference of the less-obvious findings in this report - the things industry insiders
+may not already know:
+
+1. The famous **January 2025 spike was mostly a flash** - only ~13% of the jump persisted.
+2. ...but it left a **real ~18% lift** in the baseline. Distinguish the flash from the floor.
+3. **Live-selling search leads live-shopping search by ~6 months** - a usable leading indicator.
+4. **Whatnot is under-monetised by advertisers**: ~$0.99 median top-of-page bid despite the
+   largest consumer audience.
+5. The **most valuable keywords are seller/business terms** (*tiktok shop partner center*),
+   bidding up to **$148** - the B2B goldmine is the TikTok Shop seller ecosystem.
+6. **QVC/HSN is the most mobile audience of all (~71%)** - more phone-first than TikTok or
+   Whatnot.
+7. **15,000+** QVC/HSN keywords surfaced organically - the "home shopping vs. live shopping"
+   academic distinction has collapsed in practice.
+8. QVC/HSN's **legacy terms decline while "official site"/app terms rise** - the audience is
+   migrating screen-to-screen, not disappearing.
+9. **NTWRK collapsed ~96%** from its peak - hype-driven drops are rented; community is owned.
+10. **Palmstreet** (live plant/ceramics selling) broke out from near-zero in mid-2024 - the
+    new-entrant pipeline is open.
+11. The US wave is **home-grown**: interest in Chinese super-apps (Douyin, Taobao Live) is
+    negligible as *shopping* intent.
+12. **"How do I do it" now outranks "what is it" and "is it legit"** - the market has shifted
+    from awareness to participation.
+13. The category is **rotating, not consolidating** - the concentration index rose only mildly.
+14. **Brand search is escaping the category vocabulary** - people search "whatnot," not
+    "whatnot live shopping."
+15. **Trading cards lead live-shopping vertical search, but beauty leads the GMV growth** (+791%
+    on Whatnot) - the on-ramp and the money are different verticals.
 
 {{< pagebreak >}}
 
@@ -142,6 +177,43 @@ had hung over the single largest social storefront. TikTok Shop's own scale unde
 this matters: **US GMV grew from ~$9B in 2024 to ~$15B in 2025**, and the number of US sellers
 exploded from ~4,450 in mid-2023 to ~475,000 by mid-2025.
 
+## The January 2025 spike as a natural experiment
+
+The TikTok ban drama is, in effect, a natural experiment: a sudden, exogenous shock to
+attention, after which we can measure what stuck. Decomposing the index around it is revealing,
+and a little humbling for anyone tempted to read every spike as a step-change:
+
+- **The spike was huge but mostly transient.** January 2025 reached an index of **228 - about
+  2.4x** the trailing six-month average (Jul-Dec 2024 ≈ 97). That is a genuine attention shock.
+- **Most of it washed out.** Averaging the post-spike plateau (Jun-Dec 2025 ≈ 114) against the
+  pre-spike base shows the category **retained only ~13% of the jump.** The flashbulb faded.
+- **But the residue is real.** That same plateau still sits **~18% above the pre-spike base** -
+  a permanent lift, not a full reversion. And it arrived alongside the *structural* changes
+  (QVC on TikTok, Whatnot's raise, new entrants) that the shock helped catalyse.
+
+The lesson for reading this category: distinguish the **flash** from the **floor.** Event spikes
+are mostly transient; the durable signal is the slow, unglamorous rise in the baseline - which
+is exactly what the moving average in @fig-index isolates.
+
+{{< pagebreak >}}
+
+# When live shopping happens: seasonality
+
+Beyond the long-run trend, the category has a distinct **annual rhythm** (@fig-seasonality).
+Stripping out the level and averaging each calendar month across the window shows interest
+concentrating in two periods: the **holiday quarter** (October-December, when gifting and
+deal-hunting peak) and a secondary **late-winter/spring** bump.
+
+![Average search-interest index by calendar month. Live shopping concentrates in the holiday quarter; the January figure is inflated by the one-off 2025 TikTok-ban spike.](figures/fig_seasonality.png){#fig-seasonality width=92%}
+
+Two caveats make this more interesting than a simple "holidays are big" story. First, the
+towering **January** average is largely an artefact of the one-off 2025 TikTok-ban spike rather
+than a recurring seasonal feature - a good reminder that event shocks and seasonality can be
+confounded. Second, the summer trough (June-September) is shallow and rising year on year,
+which is consistent with the category becoming a **year-round habit** rather than a purely
+gift-driven one. For sellers and platforms, the practical read is that the calendar still
+rewards a Q4 push, but the off-season floor is where the structural growth is showing up.
+
 {{< pagebreak >}}
 
 # The supply side leads: live selling
@@ -175,6 +247,22 @@ head terms; they are the quiet, high-intent queries of people deciding to become
 
 : Sample of seller-intent queries. The full universe contains ~100 distinct "how to sell"-style live-shopping terms. {#tbl-sellers tbl-colwidths="[60,22,18]"}
 
+## Sellers as a leading indicator - quantified
+
+The claim that "sellers move first" is testable, not just intuitive. If we correlate the
+month-over-month change in the live-selling index against the live-shopping index at a range of
+time offsets (@fig-leadlag), the correlation peaks where **selling leads shopping by roughly
+six months.** In other words, a surge in people learning to sell tends to show up about two
+quarters *before* the corresponding rise in consumer-side interest.
+
+![Correlation between the two indices' month-over-month changes at different lags. The peak on the "selling leads" side means seller interest is an early-warning signal for the category.](figures/fig_leadlag.png){#fig-leadlag width=92%}
+
+The relationship is moderate, not deterministic (the category is noisy and event-driven), but
+the direction is consistent and intuitive: live commerce is supply-constrained, so the people
+building the next wave of inventory and content move before the audience does. For anyone trying
+to time the category - investors, platforms, brands - **the live-selling index is the more
+useful leading dashboard**, even though it is smaller and quieter than the consumer index.
+
 # Platform rotation
 
 ![Live-shopping search interest by platform (queries of the form "[platform] live shopping"), 3-month moving average. Whatnot and QVC/HSN trend up; Meta's surfaces fade; TikTok dominates and spikes with the 2025 news cycle.](figures/fig_platform.png){#fig-platform width=100%}
@@ -196,6 +284,32 @@ top-of-funnel attention engine, Whatnot is the category-native destination, and 
 that incumbents can re-platform onto live-social rather than be displaced by it - even as the
 parent company restructures (QVC Group filed a prepackaged Chapter 11 in April 2026 to cut
 debt while pursuing its live-social "WIN" strategy).
+
+## The rotation, in shares
+
+Looking at *shares* rather than levels makes the rotation unmistakable (@fig-platform-share).
+Among branded "[platform] live shopping" searches, **Whatnot climbed from roughly 1% to ~8%**
+of the pie, and QVC/HSN gained, while Facebook and Instagram surrendered share they had held
+since the pandemic.
+
+![Share of branded '[platform] live shopping' search by month. Whatnot and QVC/HSN gain share; Meta's surfaces give it up.](figures/fig_platform_share.png){#fig-platform-share width=100%}
+
+Two structural caveats make this more interesting than a simple horse race:
+
+- **The category is mildly concentrating, not consolidating.** A Herfindahl index of branded
+  live-shopping search rose only modestly (from ~1,770 to ~2,040 over the window) - still well
+  below levels that would signal a single winner. The market is **rotating attention between
+  many players**, not collapsing onto one. @fig-concentration shows the other side of that coin:
+  Whatnot's own slice of branded live-shopping search climbed from a rounding error to a
+  meaningful share over the window.
+- **The brand energy is escaping the "live shopping" phrasing entirely.** Within explicit
+  "live shopping" queries, the *branded* share actually fell (from ~40% to ~31%) as Meta's terms
+  collapsed. But that understates the brands, because the real brand search has migrated to
+  *standalone names* - people now simply search "**whatnot**", not "whatnot live shopping." When
+  a platform becomes a verb, it leaves the category's generic vocabulary behind. That migration -
+  from concept search to brand search - is itself a marker of the category maturing.
+
+![Whatnot's share of all branded '[platform] live shopping' search over time (3-mo avg).](figures/fig_concentration.png){#fig-concentration width=92%}
 
 {{< pagebreak >}}
 
@@ -308,9 +422,137 @@ Whatnot is not alone. A cohort of **category-native** platforms is gaining searc
 - **NTWRK** - the celebrity/drops model has **faded** from its 2023-24 peak, a reminder that
   hype-driven formats are harder to sustain than community-driven ones.
 
+## When they arrived - and who survived
+
+Dating each challenger's first month of meaningful search adds a time dimension to the story -
+and a cautionary tale about churn:
+
+| Platform | First meaningful search | Peak monthly | Latest | Status |
+|---|---|---:|---:|---|
+| Whatnot | Jun 2022 (already rising) | 823,000 | 823,000 | At/near peak |
+| eBay Live | May 2023 | 18,100 | 18,100 | At/near peak |
+| Fanatics Live | Jul 2023 | 33,100 | 18,100 | Off peak, durable |
+| Palmstreet | Jun 2024 | 12,100 | 6,600 | Newest breakout |
+| NTWRK | (early) | 14,800 | 590 | Collapsed (-96%) |
+| StockX Live | not yet | - | - | Launches summer 2026 |
+
+: Emergence and survival of live-shopping challengers. {#tbl-emergence tbl-colwidths="[24,30,16,14,16]"}
+
+The standout in @tbl-emergence is **NTWRK's collapse - down roughly 96% from its peak.** The
+celebrity-drops model burned bright in 2023-24 and then faded fast, a sharp contrast with the
+community-driven platforms that have held or grown. It is the clearest evidence in the data for
+the report's recurring thesis: **hype is rented, community is owned.** Palmstreet, emerging only
+in mid-2024, shows the pipeline of new entrants is still very much open.
+
 The pattern is telling: the winners are **community-and-category-native** (Whatnot, Fanatics,
 Palmstreet), not generic "live video + cart" tools. Owning a passionate vertical beats owning a
 feature.
+
+{{< pagebreak >}}
+
+# Platform profiles: a field guide
+
+The US live-shopping landscape is best understood not as one market but as a **federation of
+lanes**. The table below maps the main players by their model and primary vertical, with a
+read on where each sits in the search data.
+
+| Platform | Model | Primary vertical(s) | Search signal |
+|---|---|---|---|
+| TikTok Shop | Social feed + live | Beauty, fashion, gadgets | Dominant; spikes with news |
+| Whatnot | Live marketplace + auctions | Collectibles, then beauty/fashion | Strongest grower (~7x) |
+| QVC / HSN | Broadcast + streaming + social | Beauty, fashion, home, jewelry | Huge base; re-platforming |
+| Fanatics Live | Live + card breaks | Sports cards, collectibles | Clear uptrend |
+| eBay Live | Live auctions | Cards, watches, handbags, fashion | Rising, expanding geos |
+| Amazon Live | Influencer streams + catalogue | Broad consumer goods | Steady, low LS-specific search |
+| YouTube Shopping | Creator + shoppable video | Broad, creator-led | Emerging |
+| StockX Live | Live drops + auctions | Sneakers, apparel, cards | Launches summer 2026 |
+| NTWRK | Celebrity drops | Streetwear, sneakers, pop culture | Faded from 2023-24 peak |
+| Palmstreet | Live marketplace | Plants, ceramics, niche collectibles | Breakout from ~zero |
+| TalkShopLive | Host-driven shoppable shows | Books, celebrity, CPG | Niche, partnership-led |
+| Popshop Live (CommentSold) | Live marketplace + SMB tooling | SMB retail, fashion | Consolidating |
+
+: The US live-shopping field, by model and vertical. {#tbl-platforms tbl-colwidths="[20,26,30,24]"}
+
+A few cross-cutting observations:
+
+- **Two super-funnels, many destinations.** TikTok Shop and (to a lesser extent) YouTube and
+  Instagram are where mainstream audiences *discover* live shopping; the category-native
+  marketplaces (Whatnot, Fanatics, eBay Live, Palmstreet) are where committed buyers *transact*.
+  The discovery layer and the destination layer are increasingly distinct businesses.
+
+- **Collectibles is the on-ramp, everything else is the expansion.** Almost every successful
+  destination - Whatnot, Fanatics Live, eBay Live, StockX Live - started in cards/sneakers/
+  collectibles and is now broadening. The passion vertical builds the daily-active habit; the
+  mass verticals (beauty, fashion, electronics) scale the dollars.
+
+- **Incumbents are re-platforming, not dying.** QVC/HSN's enormous existing audience is being
+  migrated onto streaming, social and a 24/7 TikTok channel. eBay is bolting live onto a
+  marketplace with 30 years of supply. The incumbent advantage is inventory and trust; the
+  challenger advantage is format-native engagement.
+
+- **The toolkit layer is real but quieter.** Behind the destinations sits a B2B enablement
+  layer (CommentSold, Bambuser-style providers, shoppable-video tools). In US *search*, the
+  destination apps dominate - but roughly half of recent live-commerce funding has gone to this
+  infrastructure layer, suggesting investors expect the plumbing to matter as much as the
+  storefronts.
+
+{{< pagebreak >}}
+
+# The economics of attention: who advertisers actually pay for
+
+Search interest measures consumer attention. But the Keyword Planner also reports what
+**advertisers** are willing to pay to intercept each query - the top-of-page bid and competition
+index - which is a direct read on the *commercial value* of an audience. Here the data delivers
+one of the report's most counter-intuitive findings.
+
+![Median Google top-of-page bid for each platform's live-shopping keywords. Higher = advertisers compete harder to reach that audience.](figures/fig_commercial.png){#fig-commercial width=92%}
+
+**Whatnot has the audience but not the ad prices.** Despite commanding by far the most consumer
+search, Whatnot's live-shopping keywords carry a **median top-of-page bid of just ~$0.99** -
+the *lowest* of any major platform. eBay (~$8.11) and Facebook (~$10.40) command roughly ten
+times more; TikTok sits in between (~$4.27). Three readings, all interesting:
+
+- **Whatnot is under-monetised by the search-ad market** - a possible arbitrage for marketers
+  who want a highly engaged audience without paying highly competitive keyword prices, and a
+  reminder that Whatnot's own take-rate model (not search ads) is where its value sits.
+- **The B2B goldmine is the TikTok Shop *seller* ecosystem.** The single most expensive
+  live-shopping keywords are not consumer terms at all - they are seller/business terms like
+  *tiktok shop partner center*, *tiktok shop for business* and *tiktok shoppable videos*, with
+  top-of-page bids reaching **$80-$148.** An entire economy of agencies, software and services
+  is bidding to reach TikTok Shop sellers.
+- **The consumer category is still cheap.** A median top-of-page bid of ~$3 and a median
+  competition index of ~12 (out of 100) across live-shopping keywords means this is, in
+  advertising terms, still an *early* market - attention is growing faster than the cost of
+  buying it.
+
+| Keyword | Avg. monthly searches | Top-of-page bid |
+|---|---:|---:|
+| tiktok shoppable videos | 110 | $148.04 |
+| tiktok shop partner center | 880 | $112.09 |
+| tiktok shop for business | 390 | $89.88 |
+| tiktok shop partnership | 390 | $82.55 |
+| seller center tiktok shop | 110 | $74.78 |
+| tiktok shop fulfillment | 590 | $57.10 |
+
+: The most commercially valuable live-shopping keywords are seller/business terms, not consumer ones. {#tbl-cpc tbl-colwidths="[54,24,22]"}
+
+# A phone-first behaviour - and a surprise about who is most mobile
+
+Live shopping is, unsurprisingly, a mobile behaviour: across all live-shopping queries,
+**~67% of searches come from phones**, versus ~30% desktop and ~3% tablet (@fig-device). What
+*is* surprising is the ranking. The most mobile audience of all belongs to **QVC/HSN (~71%
+mobile)** - the 40-year-old television brands - while the **collectibles platforms (Fanatics
+Live ~59%, eBay ~62%) skew the most desktop.**
+
+![Share of search by device, by platform. Live shopping is phone-first everywhere; QVC/HSN is the most mobile, collectibles platforms the most desktop.](figures/fig_device.png){#fig-device width=100%}
+
+The collectibles skew makes sense: card and watch buyers do real research - comparing
+populations, prices and grades - and that research-heavy behaviour pulls toward the desktop.
+QVC/HSN's extreme mobile skew is the more telling number: it confirms that the legacy networks'
+*search* audience is not sitting in front of a TV with a laptop, but reaching for a phone -
+exactly the audience their streaming-and-social pivot is chasing. For platform and ad design,
+the implication is blunt: **the experience has to be built phone-first, and the "lean-back TV"
+mental model is obsolete even for the brands that invented it.**
 
 {{< pagebreak >}}
 
@@ -422,6 +664,63 @@ to precede the next mainstream vertical.
 
 : Sample of niche-format queries. {#tbl-niche tbl-colwidths="[58,24,18]"}
 
+## The wave is home-grown, not imported
+
+A useful negative finding: despite China's mature live-commerce market, **US interest in
+foreign live-shopping platforms is faint.** The Chinese super-apps that dominate live commerce
+abroad (Douyin, Kuaishou, Taobao Live, Shopee) appear in US search almost entirely as
+*app-download* curiosity rather than shopping intent, and genuine cross-border live-shopping
+terms are tiny.
+
+| Keyword | Avg. monthly searches | 4-yr trend |
+|---|---:|---|
+| douyin | 90,500 | up |
+| kuaishou | 5,400 | up |
+| live shopee | 320 | flat |
+| taobao live shopping | 10 | flat |
+
+: US search for international live-commerce apps - mostly download curiosity, not shopping. {#tbl-intl tbl-colwidths="[58,24,18]"}
+
+The implication is strategically important: the US live-shopping breakout is **domestically
+driven** - by TikTok Shop, Whatnot and the collectibles community - not a spillover from Asian
+platforms. The American market is building its own version rather than importing one.
+
+## Whatnot's long tail
+
+Finally, the depth of Whatnot's brand footprint is itself a signal. Beyond the head term, a
+long tail of intent-rich queries has formed - fees, selling, the company, the website - the
+kind of vocabulary that only accretes around a platform people are seriously using and
+seriously considering selling on.
+
+| Keyword | Avg. monthly searches | 4-yr trend |
+|---|---:|---|
+| whatnot app | 90,500 | up |
+| what is a whatnot | 22,200 | up |
+| whatnot com | 6,600 | up |
+| whatnot auction | 2,900 | flat |
+| whatnot fees | 1,900 | up |
+| whatnot shop | 1,900 | up |
+| whatnot seller fees | 1,600 | up |
+
+: A slice of Whatnot's 125-term brand long tail. {#tbl-wn-tail tbl-colwidths="[58,24,18]"}
+
+# How the questions mature
+
+There is a natural life-cycle to how people search a new category: first *what is it?*, then
+*is it safe?*, then *how do I do it?* Bucketing live-shopping question queries by type and
+tracking them over time (@fig-questions) shows the US market moving decisively into the third
+phase.
+
+![Question queries about live shopping over time, by type. "How" (participation) now dominates "what" (awareness) and "is it legit" (trust).](figures/fig_questions.png){#fig-questions width=100%}
+
+**"How" questions now dominate** - averaging nearly 28,000 searches a month versus ~15,000 for
+trust questions and ~9,000 for "what is it" awareness. This is the signature of a maturing
+market: the centre of gravity has shifted from *understanding* live shopping to *participating*
+in it - how to sell, how to use the apps, how to get started. The awareness phase is largely
+over. The two phases that remain live - participation ("how") and trust ("is it legit") - are
+the two that platforms can most directly influence, and they are the subject of the next two
+sections.
+
 # Trust: "is it legit?" {#sec-trust}
 
 ![Legitimacy queries scale with adoption. TikTok Shop legitimacy fears spiked after its 2023 US launch then eased; "is whatnot legit" has climbed steadily and now leads.](figures/fig_trust.png){#fig-trust width=100%}
@@ -462,10 +761,42 @@ fastest-growing categories by GMV are now well beyond collectibles:
 | Jewelry | +259% |
 | Women's fashion | +223% |
 
+![Whatnot GMV growth by category, 2025 vs 2024 (company reporting). The mass-retail verticals - beauty, electronics, jewelry, fashion - are scaling fastest, well beyond the collectibles roots.](figures/fig_gmv_categories.png){#fig-gmv width=92%}
+
 The reconciliation between the two views is the insight: **collectibles are the top of the
 funnel** (they bring passionate, daily-active users in), while **beauty, fashion, electronics
 and jewelry are where the dollars are scaling**. A platform that converts a card collector into
 a beauty or fashion buyer captures both the engagement and the basket.
+
+A closer look at the individual verticals:
+
+- **Trading cards & sports memorabilia.** The original engine. The vocabulary is deep and
+  fragmented (*breaks*, *rips*, set-specific terms), signalling a committed community rather
+  than a casual audience. This is where Fanatics Live and eBay Live concentrate, and where
+  Whatnot built its habit. Steady rather than explosive in search - because it is already
+  mature within live shopping.
+
+- **Beauty.** The fastest-growing GMV vertical on Whatnot (+791%) and a natural fit for live
+  demonstration (swatches, tutorials, before/after). Notably, beauty also shows up heavily in
+  **QVC/HSN** search (*qvc makeup*, *qvc skincare*) - the legacy networks' historical strength,
+  now being carried into live-social. Beauty is the clearest example of live shopping crossing
+  from hobbyist niche to mass retail.
+
+- **Women's fashion & apparel.** Whatnot's fastest-growing *segment*, with individual sellers
+  reportedly crossing $1M/month via clothing hauls and liquidation streams. Apparel suits the
+  format's impulse-and-scarcity dynamics (limited sizes, "going once"), and resale/thrift gives
+  it a sustainability angle that resonates with younger buyers.
+
+- **Electronics & gadgets.** +444% GMV on Whatnot and a staple of TikTok Shop's deal-driven
+  feed. Lower emotional engagement than collectibles, but high basket sizes and strong
+  promotional response.
+
+- **Jewelry & watches.** +259% GMV on Whatnot; eBay Live's expansion into luxury watches and
+  handbags targets exactly this. High average order values make even modest volumes lucrative.
+
+- **Plants, ceramics & "weird niches."** The frontier. Palmstreet's breakout shows that almost
+  any passionate collecting community can support a live marketplace - the model generalizes
+  wherever there is a hobby, a community, and items worth showing in real time.
 
 # Live auctions: a parallel format
 
@@ -542,6 +873,124 @@ fall out of the patterns above (offered as prompts, not predictions):
 
 {{< pagebreak >}}
 
+# Beyond search: corroborating signals and global context
+
+Search interest is one lens; it is more convincing when other signals point the same way.
+
+**Other attention signals agree.** The prior edition noted that Whatnot's rise was mirrored in
+YouTube search, Reddit activity, and Wikipedia pageviews - all "up and to the right." The same
+holds for the category broadly: live-shopping subreddits have grown, creator content
+explaining "how to sell on TikTok Shop / Whatnot" has proliferated, and the trade press now
+covers the space as a category rather than a curiosity. When independent attention signals move
+together, the underlying shift is more likely real than an artefact of one data source.
+
+**Business metrics agree.** The search inflection is matched by hard numbers: Whatnot's GMV
+roughly doubling to $6B+, TikTok Shop's US GMV rising to ~$15B, eBay Live's geographic
+expansion, StockX's decision to build a live product, and QVC Group's strategic (if financially
+strained) pivot. Search led; the dollars followed.
+
+**Global context: the ceiling is high.** In China, live commerce is estimated to account for
+roughly **60% of e-commerce**; in the US, the figure is around **5%**. Whether or not the US
+ever approaches Chinese penetration, the gap frames the opportunity: even a partial convergence
+implies years of structural growth. The US is also taking a recognisably different path -
+community-and-collectibles-led, and domestically built - rather than copying the
+Chinese super-app model wholesale.
+
+# Risks: what could derail the breakout
+
+The base case is constructive, but a credible report names the ways it could be wrong.
+
+- **Trust erosion at scale.** The biggest risk is the flip side of the biggest opportunity. If
+  counterfeits, non-delivery, and refund friction grow faster than verification and buyer
+  protection, the "is it legit?" question could curdle from healthy curiosity into mainstream
+  distrust - the one thing that reliably kills a nascent consumer behaviour.
+
+- **TikTok execution risk.** The ownership question is resolved, but the new US joint venture
+  still has to run a complex marketplace, keep creators and sellers engaged, and grow the
+  *live* share of GMV (still only ~14%). Missteps at the largest discovery funnel would slow the
+  whole category.
+
+- **Seller economics and churn.** The supply surge is real, but live selling is hard work with
+  thin margins for many. If aspiring sellers churn out faster than they are recruited - or if
+  fee changes sour sentiment (note the rising *seller fees* queries) - the supply engine could
+  stall.
+
+- **Concentration risk.** Whatnot's dominance is a strength and a fragility: a single platform
+  carrying so much of the category's momentum means its stumbles would be the category's
+  stumbles.
+
+- **Macro and attention competition.** Live shopping competes for discretionary spend and, just
+  as critically, for attention. A consumer pullback or a shift in where people spend their
+  screen time would pressure a format that depends on both.
+
+{{< pagebreak >}}
+
+# What it means - by stakeholder
+
+The same data reads differently depending on where you sit. A consolidated view:
+
+## For platforms and marketplaces
+
+- **Win a community before a category.** Every durable destination started by owning a
+  passionate vertical, then expanded. Generic "live video + cart" has repeatedly failed;
+  community-native formats have repeatedly won.
+- **Treat trust as a product, not a policy.** "Is it legit?" scales with adoption; the platform
+  that most visibly solves verification, buyer protection and dispute resolution converts the
+  most skeptics into buyers.
+- **Build phone-first, always.** Two-thirds of search is mobile, and even QVC/HSN's audience is
+  the most mobile of all. The lean-back TV model is obsolete.
+
+## For incumbent retailers and brands
+
+- **Re-platform; don't wait to be displaced.** QVC/HSN's migration onto streaming, social and a
+  24/7 TikTok channel shows incumbents can convert legacy audiences - the rising "official
+  site"/app search proves the audience is willing to move.
+- **Match the platform to the vertical.** The landscape is a federation of lanes (cards to
+  Fanatics/eBay, beauty/fashion to TikTok Shop and Whatnot, drops to NTWRK's successors).
+  There is no single "live shopping channel" to plug into.
+- **The mass verticals are the prize.** Beauty, electronics, jewelry and fashion are scaling
+  fastest by GMV - the dollars have moved well beyond the collectibles roots.
+
+## For sellers and creators
+
+- **You are early, and the tools are cheap.** Median keyword competition is low; the seller
+  ecosystem is forming now. The surge in "how to sell" queries is your competition arriving -
+  but the audience is arriving faster.
+- **Mind the economics.** Rising "seller fees" searches signal that take-rates and margins are
+  front of mind. Platform choice is increasingly an economic decision, not just an audience one.
+
+## For investors and analysts
+
+- **Watch the live-selling index as the leading dashboard** - it leads consumer interest by
+  roughly two quarters.
+- **Distinguish the flash from the floor.** Event spikes (the TikTok ban) mostly revert; the
+  durable signal is the rising baseline.
+- **Note the monetisation gap.** Whatnot's enormous, low-ad-cost audience is both an arbitrage
+  for marketers and a question for the company's own monetisation - while the clearest B2B
+  revenue pool today is the TikTok Shop seller-services ecosystem.
+
+# What search data can - and cannot - tell you
+
+In the spirit of intellectual honesty, it is worth being explicit about the method's limits.
+
+**What it does well.** Search is an unbiased, real-time, behavioural signal. Nobody searches to
+please a pollster. It captures *latent demand* (people considering live shopping before they
+buy), *supply intent* (people learning to sell before they are onboarded), and *trust friction*
+(people checking legitimacy before they commit) - often months before any of these show up in
+GMV. Because it is continuous and granular, it surfaces micro-trends (Palmstreet, "live
+thrifting") while they are still tiny.
+
+**What it cannot do.** Search interest is attention, not transactions: a query is not a sale,
+and the relationship between the two varies by category. Keyword Planner volumes are *bucketed*
+(reported in bands), so absolute numbers are best read as orders of magnitude. Brand search and
+category search can diverge - as Whatnot shows - so any single basket undercounts the
+platforms that have become verbs. And search cannot explain *why*: it can show that "is whatnot
+legit" is rising, but not what specifically reassures or alarms a shopper. The right posture is
+to treat search as a **leading, directional indicator** to be triangulated against GMV,
+funding, app rankings and qualitative research - which is exactly how this report uses it.
+
+{{< pagebreak >}}
+
 # Outlook and implications
 
 **The base case for 2026-27 is continued, structurally higher growth.** The category cleared
@@ -568,6 +1017,28 @@ What to watch:
 The one-line takeaway: **US live shopping in 2026 is no longer a question of "if" - it is a
 question of how fast supply and trust can scale to meet demand that has already inflected.**
 
+# A watchlist for 2026-27
+
+If this report were a dashboard, these are the dials worth checking each quarter - chosen
+because each one is an early, decision-relevant signal rather than a lagging headline:
+
+| Signal | Why it matters | What would change the story |
+|---|---|---|
+| Live-selling index | Leads consumer interest by ~2 quarters | A sustained roll-over would warn of a slowdown before GMV shows it |
+| TikTok Shop live-GMV share | Live is still only ~14% of its GMV | A rising live share would lift the whole category |
+| Whatnot monetisation & take-rate | Audience is huge; ad value is low | Evidence it can monetise the audience it already owns |
+| StockX Live launch (summer 2026) | A credible, capitalised new entrant | Fast search traction would validate the auction-and-drops model |
+| New-entrant pipeline | Palmstreet showed the lane is open | The next near-zero breakout is the next Palmstreet |
+| "Is it legit?" trajectory | Trust gates mainstream adoption | A sharp acceleration would flag a trust problem at scale |
+| Seller-fee / seller-economics queries | Supply is the constraint | Rising discontent would threaten the supply engine |
+| QVC Group post-restructuring | Test of incumbent re-platforming | Success or failure here generalises to all legacy retail |
+
+: A quarterly watchlist of leading signals. {#tbl-watchlist tbl-colwidths="[26,38,36]"}
+
+Taken together, these dials describe a category that has cleared its existential questions and
+now turns on execution: **supply, trust, and monetisation.** The demand has already inflected;
+2026-27 will be decided by how well the industry meets it.
+
 {{< pagebreak >}}
 
 # Appendix
@@ -593,6 +1064,58 @@ question of how fast supply and trust can scale to meet demand that has already 
   universe by topic pattern and shown with average monthly searches and a "4-yr trend" label
   derived from the linear-trend slope (up / flat / down). Samples are curated for relevance and
   are illustrative, not exhaustive; volumes are Keyword Planner buckets.
+
+## The data funnel
+
+The universe was built in stages, each one narrowing toward signal:
+
+| Stage | Count | What it is |
+|---|---:|---|
+| Curated seeds | ~7,700 | Prior-study seeds + 2026 additions (emerging platforms, verticals) |
+| Raw keyword ideas | ~257,000 | Google's keyword-ideas expansion of those seeds |
+| Unique keywords (cleaned) | ~79,000 | After de-duplication, including metric-identical collisions |
+| Modelable keywords | ~57,000 | After dropping near-zero / sparse series |
+| Live-shopping basket | ~196 | Index constituents matching the live-shopping pattern |
+| Live-selling basket | ~107 | Index constituents matching the live-selling pattern |
+
+: The seed-to-index funnel. {#tbl-funnel tbl-colwidths="[46,18,36]"}
+
+## The index basket
+
+The live-shopping index is built from queries that explicitly express live-shopping intent.
+They fall into five broad groups (with representative examples):
+
+- **Definitions & concepts** - *live shopping*, *livestream shopping*, *live commerce*, *what is
+  live shopping*.
+- **Social platforms** - *tiktok live shopping*, *instagram live shopping*, *youtube live
+  shopping*, *facebook live shopping*.
+- **How-to & tools** - *live shopping app*, *live shopping platform*, *live stream shopping
+  platform*.
+- **Retailers & marketplaces** - *whatnot live shopping*, *amazon live shopping*, *qvc live
+  shopping*, *hsn live shopping*, *ebay live shopping*.
+- **Software providers** - vendor-named live-shopping tooling (e.g. *bambuser live shopping*).
+
+Standalone brand terms (e.g. "whatnot" on its own) sit *outside* this intent basket by design,
+which is why brand-level analyses in this report are run separately from the index.
+
+## Glossary
+
+- **Live shopping / live commerce** - real-time, video-led selling where a host presents
+  products to a live audience that can buy, bid, and chat in the moment.
+- **Live selling** - the seller-side of the same activity; the act of hosting and selling on a
+  live stream.
+- **GMV (gross merchandise value)** - the total value of goods sold through a platform; the
+  standard scale metric for marketplaces.
+- **Break / card break** - a live event where a host opens sealed trading-card product and
+  distributes cards to buyers who purchased slots; a core collectibles format.
+- **Drop** - a scheduled release of limited-quantity items, often with scarcity and hype
+  (streetwear, sneakers, collectibles).
+- **Search-interest index** - here, normalized total monthly Google search volume across a
+  curated basket of queries, set to 100 in the first month of the window.
+- **Slope (trend)** - the average monthly change in a keyword's smoothed search volume, used to
+  rank growth.
+- **Head term / long tail** - high-volume general queries (head) versus the vast number of
+  low-volume specific queries (long tail), where early signals often appear first.
 
 ## Caveats
 

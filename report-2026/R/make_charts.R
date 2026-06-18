@@ -197,5 +197,148 @@ p7 <- ggplot(tr, aes(month, roll_avg, colour = keyword)) +
   theme(plot.margin = margin(10, 90, 8, 10))
 save_fig(p7, "fig_trust.png", h = 130)
 
+# ── 8. Seasonality (avg index by calendar month) ───────────────────────────
+seas <- ls |>
+  mutate(mn = lubridate::month(month), m = lubridate::month(month, label = TRUE)) |>
+  group_by(mn, m) |> summarise(idx = mean(index_value), .groups = "drop") |> arrange(mn) |>
+  mutate(q4 = mn %in% c(10, 11, 12), jan = mn == 1)
+
+p8 <- ggplot(seas, aes(reorder(m, mn), idx, fill = q4)) +
+  geom_col(width = 0.72) +
+  geom_hline(yintercept = 100, linetype = 2, colour = LS_COL$graymid) +
+  geom_text(aes(label = round(idx)), vjust = -0.5, size = 3, colour = LS_COL$ink) +
+  annotate("text", x = "Jan", y = 158, label = "inflated by\nJan '25 event",
+           size = 2.6, colour = LS_COL$red, fontface = "italic", lineheight = 0.9) +
+  scale_fill_manual(values = c(`FALSE` = LS_COL$graymid, `TRUE` = LS_COL$red)) +
+  scale_y_continuous(expand = expansion(c(0, 0.12))) +
+  labs(title = "Live shopping has a <span style='color:#CD0000;'>holiday-quarter</span> rhythm",
+       subtitle = "Average search-interest index by calendar month across the window (dashed line = window average of 100).",
+       caption = ls_source_caption(WINDOW), x = NULL, y = "Avg. index") +
+  theme_ls() + theme(panel.grid.major.x = element_blank())
+save_fig(p8, "fig_seasonality.png", h = 120)
+
+# ── 9. Lead-lag: selling leads shopping ─────────────────────────────────────
+ll <- readr::read_csv(file.path(data_dir, "leadlag.csv"), show_col_types = FALSE)
+p9 <- ggplot(ll, aes(lag_months, corr, fill = corr > 0)) +
+  geom_col(width = 0.7) +
+  geom_vline(xintercept = 0, colour = LS_COL$ink, linewidth = 0.4) +
+  annotate("text", x = -4.2, y = max(ll$corr) * 1.04, label = "selling leads shopping",
+           size = 3, colour = LS_COL$red, fontface = "bold") +
+  annotate("text", x = 4.2, y = max(ll$corr) * 1.04, label = "shopping leads selling",
+           size = 3, colour = LS_COL$graymid) +
+  scale_fill_manual(values = c(`TRUE` = LS_COL$red, `FALSE` = LS_COL$graymid)) +
+  scale_x_continuous(breaks = -6:6) +
+  labs(title = "Sellers move first: <span style='color:#CD0000;'>live-selling</span> search leads live-<b>shopping</b> by about two quarters",
+       subtitle = "Correlation between month-over-month change in the two indices at different lags. Peak correlation sits where selling leads.",
+       caption = ls_source_caption(WINDOW), x = "Lag (months) - negative = selling leads", y = "Correlation") +
+  theme_ls()
+save_fig(p9, "fig_leadlag.png", h = 120)
+
+# ── 10. Platform share-of-search over time ──────────────────────────────────
+ps <- readr::read_csv(file.path(data_dir, "platform_share.csv"), show_col_types = FALSE) |>
+  mutate(month = as.Date(month))
+ps_keep <- c("Whatnot", "TikTok", "QVC/HSN", "eBay", "Facebook", "Instagram", "Amazon")
+ps2 <- ps |> filter(platform %in% ps_keep) |>
+  mutate(platform = factor(platform, levels = ps_keep)) |>
+  group_by(platform) |> arrange(month) |>
+  mutate(share_s = zoo::rollmean(share, 3, fill = NA, align = "right")) |> ungroup()
+p10 <- ggplot(ps2, aes(month, share_s, fill = platform)) +
+  geom_area(position = "fill", colour = "white", linewidth = 0.15) +
+  scale_y_continuous(labels = scales::percent) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_fill_manual(values = c(Whatnot = "#E0A800", TikTok = LS_COL$ink, `QVC/HSN` = LS_COL$red,
+                               eBay = "#2CA02C", Facebook = "#1F77B4", Instagram = "#9467BD",
+                               Amazon = "#FF7F0E")) +
+  labs(title = "The rotation, in shares: <span style='color:#E0A800;'>Whatnot</span> and <span style='color:#CD0000;'>QVC/HSN</span> take share as Meta gives it up",
+       subtitle = "Share of branded '[platform] live shopping' search by month (3-mo avg). Whatnot rose from ~1% to ~8%.",
+       caption = ls_source_caption(WINDOW), x = NULL, y = "Share of branded LS search") +
+  theme_ls() + theme(legend.position = "right", legend.title = element_blank())
+save_fig(p10, "fig_platform_share.png", h = 130)
+
+# ── 11. Commercial value by platform (top-of-page bid) ──────────────────────
+cv <- readr::read_csv(file.path(data_dir, "commercial_by_platform.csv"), show_col_types = FALSE) |>
+  arrange(median_top_bid) |> mutate(platform = factor(platform, levels = platform))
+p11 <- ggplot(cv, aes(median_top_bid, platform)) +
+  geom_segment(aes(x = 0, xend = median_top_bid, yend = platform), colour = LS_COL$graymid, linewidth = 0.8) +
+  geom_point(size = 4, colour = LS_COL$red) +
+  geom_text(aes(label = scales::dollar(median_top_bid)), hjust = -0.4, size = 3, colour = LS_COL$ink) +
+  scale_x_continuous(labels = scales::dollar, expand = expansion(c(0, 0.18))) +
+  labs(title = "The monetisation gap: <span style='color:#CD0000;'>Whatnot</span> has the audience, not the ad prices",
+       subtitle = "Median Google top-of-page bid for that platform's live-shopping keywords. Higher = advertisers pay more to reach that audience.",
+       caption = paste0("Source: Google Ads Keyword Planner API (US). Bids converted from micros. ", WINDOW, "."),
+       x = "Median top-of-page bid (USD)", y = NULL) +
+  theme_ls() + theme(panel.grid.major.y = element_blank())
+save_fig(p11, "fig_commercial.png", h = 110)
+
+# ── 12. Device mix by platform ──────────────────────────────────────────────
+dv <- readr::read_csv(file.path(data_dir, "device_mix.csv"), show_col_types = FALSE) |>
+  tidyr::pivot_longer(c(mobile_pct, desktop_pct, tablet_pct), names_to = "device", values_to = "pct") |>
+  mutate(device = recode(device, mobile_pct = "Mobile", desktop_pct = "Desktop", tablet_pct = "Tablet"),
+         device = factor(device, levels = c("Tablet", "Desktop", "Mobile")),
+         segment = factor(segment, levels = rev(unique(segment))))
+p12 <- ggplot(dv, aes(pct, segment, fill = device)) +
+  geom_col(width = 0.74) +
+  geom_vline(xintercept = 50, linetype = 2, colour = "white", linewidth = 0.4) +
+  scale_x_continuous(labels = scales::percent_format(scale = 1), expand = c(0, 0)) +
+  scale_fill_manual(values = c(Mobile = LS_COL$red, Desktop = LS_COL$graymid, Tablet = "#D8D8D8")) +
+  labs(title = "Live shopping is a <span style='color:#CD0000;'>phone</span> behaviour - even for 40-year-old TV brands",
+       subtitle = "Share of search by device. QVC/HSN is the most mobile of all; collectibles platforms skew slightly more desktop.",
+       caption = ls_source_caption(WINDOW), x = NULL, y = NULL) +
+  theme_ls() + theme(legend.position = "top", legend.title = element_blank())
+save_fig(p12, "fig_device.png", h = 130)
+
+# ── 13. Question taxonomy over time ─────────────────────────────────────────
+qt <- readr::read_csv(file.path(data_dir, "question_taxonomy.csv"), show_col_types = FALSE) |>
+  mutate(month = as.Date(month)) |> filter(qtype != "why") |>
+  group_by(qtype) |> arrange(month) |>
+  mutate(s = zoo::rollmean(searches, 3, fill = NA, align = "right")) |> ungroup() |>
+  mutate(qtype = recode(qtype, how = "How (participate)", `is/are` = "Is it legit? (trust)", what = "What is it? (awareness)"))
+p13 <- ggplot(qt, aes(month, s, colour = qtype)) +
+  geom_line(linewidth = 1.3) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_y_continuous(labels = scales::comma) +
+  scale_colour_manual(values = c("How (participate)" = LS_COL$red,
+                                 "Is it legit? (trust)" = LS_COL$ink,
+                                 "What is it? (awareness)" = "#1F77B4")) +
+  labs(title = "From \"what is it\" to \"how do I do it\": the questions mature with the market",
+       subtitle = "Monthly search volume of question queries about live shopping, by type (3-mo avg).",
+       caption = ls_source_caption(WINDOW), x = NULL, y = "Monthly searches") +
+  theme_ls() + theme(legend.position = "top", legend.title = element_blank())
+save_fig(p13, "fig_questions.png", h = 120)
+
+# ── 14. Concentration: Whatnot share over time ──────────────────────────────
+cc <- readr::read_csv(file.path(data_dir, "concentration.csv"), show_col_types = FALSE) |>
+  mutate(month = as.Date(month),
+         wn_s = zoo::rollmean(whatnot_share, 3, fill = NA, align = "right"),
+         t5_s = zoo::rollmean(top5_share, 3, fill = NA, align = "right"))
+p14 <- ggplot(cc, aes(month)) +
+  geom_area(aes(y = wn_s), fill = LS_COL$whatnot, alpha = 0.55) +
+  geom_line(aes(y = wn_s), colour = "#C9A800", linewidth = 1.5) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_y_continuous(labels = scales::percent_format(scale = 1)) +
+  labs(title = "From a rounding error to a real share: <span style='color:#C9A800;'>Whatnot</span>'s slice of branded live-shopping search",
+       subtitle = "Whatnot's share of all branded '[platform] live shopping' search, 3-month moving average.",
+       caption = ls_source_caption(WINDOW), x = NULL, y = "Share of branded LS search") +
+  theme_ls()
+save_fig(p14, "fig_concentration.png", h = 115)
+
+# ── 15. Whatnot GMV growth by category (from public reporting) ──────────────
+gmv_cat <- tibble::tribble(
+  ~category, ~growth,
+  "Beauty", 791, "Electronics", 444, "Jewelry", 259, "Women's fashion", 223
+) |> arrange(growth) |> mutate(category = factor(category, levels = category))
+p15 <- ggplot(gmv_cat, aes(growth, category)) +
+  geom_segment(aes(x = 0, xend = growth, yend = category), colour = LS_COL$graymid, linewidth = 0.9) +
+  geom_point(size = 5, colour = LS_COL$whatnot) +
+  geom_point(size = 5, shape = 21, colour = "#C9A800", fill = NA, stroke = 1) +
+  geom_text(aes(label = paste0("+", growth, "%")), hjust = -0.35, size = 3.2, colour = LS_COL$ink) +
+  scale_x_continuous(labels = function(x) paste0("+", x, "%"), expand = expansion(c(0, 0.16))) +
+  labs(title = "Beyond collectibles: where Whatnot's <span style='background-color:#FFF351;'>&nbsp;dollars&nbsp;</span> are growing fastest",
+       subtitle = "Whatnot GMV growth by category, 2025 vs 2024 (company reporting). The mass-retail verticals are scaling hardest.",
+       caption = "Source: Whatnot public reporting / trade press, 2025-2026. Search data elsewhere from Google Ads Keyword Planner API.",
+       x = "GMV growth, 2025 YoY", y = NULL) +
+  theme_ls() + theme(panel.grid.major.y = element_blank())
+save_fig(p15, "fig_gmv_categories.png", h = 105)
+
 cat("\nAll figures written to", fig_dir, "\n")
 print(list.files(fig_dir))
