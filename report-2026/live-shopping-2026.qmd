@@ -8,12 +8,12 @@ abstract: |
   retired its native live-shopping features in 2022-23, category search interest drifted
   lower and bottomed in mid-2024. It then inflected sharply: average monthly search interest
   rose roughly 49% in 2025, and the single largest spike on record lined up with the January
-  2025 US TikTok ban drama. This report rebuilds the live-shopping and live-selling search
+  2025 US TikTok ban drama. This report builds live-shopping and live-selling search
   indices from a fresh pull of ~80,000 keywords (Google Ads Keyword Planner, June 2022 - May
-  2026, US only), re-examines every angle from the prior edition, and adds new ones: a
+  2026, US only) and examines the category from many angles: a
   platform-rotation and share-of-search view, the rise (and fall) of category-native
   challengers, the trading-card-led vertical story, a lead-lag test showing sellers move first,
-  the commercial value advertisers place on each audience, a device-mix read, and an empirical
+  and an empirical
   look at trust ("is it legit?") and how the category's questions are maturing.
 date-format: "MMMM YYYY"
 format:
@@ -60,7 +60,7 @@ format:
 
 {{< pagebreak >}}
 
-# Fifteen things that surprised us
+# Twelve things that surprised us
 
 A quick-reference of the less-obvious findings in this report - the things industry insiders
 may not already know:
@@ -68,27 +68,21 @@ may not already know:
 1. The famous **January 2025 spike was mostly a flash** - only ~13% of the jump persisted.
 2. ...but it left a **real ~18% lift** in the baseline. Distinguish the flash from the floor.
 3. **Live-selling search leads live-shopping search by ~6 months** - a usable leading indicator.
-4. **Whatnot is under-monetised by advertisers**: ~$0.99 median top-of-page bid despite the
-   largest consumer audience.
-5. The **most valuable keywords are seller/business terms** (*tiktok shop partner center*),
-   bidding up to **$148** - the B2B goldmine is the TikTok Shop seller ecosystem.
-6. **QVC/HSN is the most mobile audience of all (~71%)** - more phone-first than TikTok or
-   Whatnot.
-7. **15,000+** QVC/HSN keywords surfaced organically - the "home shopping vs. live shopping"
+4. **15,000+** QVC/HSN keywords surfaced organically - the "home shopping vs. live shopping"
    academic distinction has collapsed in practice.
-8. QVC/HSN's **legacy terms decline while "official site"/app terms rise** - the audience is
+5. QVC/HSN's **legacy terms decline while "official site"/app terms rise** - the audience is
    migrating screen-to-screen, not disappearing.
-9. **NTWRK collapsed ~96%** from its peak - hype-driven drops are rented; community is owned.
-10. **Palmstreet** (live plant/ceramics selling) broke out from near-zero in mid-2024 - the
-    new-entrant pipeline is open.
-11. The US wave is **home-grown**: interest in Chinese super-apps (Douyin, Taobao Live) is
-    negligible as *shopping* intent.
-12. **"How do I do it" now outranks "what is it" and "is it legit"** - the market has shifted
-    from awareness to participation.
-13. The category is **rotating, not consolidating** - the concentration index rose only mildly.
-14. **Brand search is escaping the category vocabulary** - people search "whatnot," not
+6. **NTWRK collapsed ~96%** from its peak - hype-driven drops are rented; community is owned.
+7. **Palmstreet** (live plant/ceramics selling) broke out from near-zero in mid-2024 - the
+   new-entrant pipeline is open.
+8. The US wave is **home-grown**: interest in Chinese super-apps (Douyin, Taobao Live) is
+   negligible as *shopping* intent.
+9. **"How do I do it" now outranks "what is it" and "is it legit"** - the market has shifted
+   from awareness to participation.
+10. The category is **rotating, not consolidating** - the concentration index rose only mildly.
+11. **Brand search is escaping the category vocabulary** - people search "whatnot," not
     "whatnot live shopping."
-15. **Trading cards lead live-shopping vertical search, but beauty leads the GMV growth** (+791%
+12. **Trading cards lead live-shopping vertical search, but beauty leads the GMV growth** (+791%
     on Whatnot) - the on-ramp and the money are different verticals.
 
 {{< pagebreak >}}
@@ -115,18 +109,17 @@ terms - as a proxy for category attention. Two indices are built:
 
 ## How the data is built
 
-Starting from ~7,700 curated seed terms (the prior study's seeds plus new 2026 seeds for
-emerging platforms and verticals), we expanded them via the Google Ads Keyword Planner API
+Starting from ~7,700 curated seed terms covering established and emerging live-shopping
+platforms and verticals, we expanded them via the Google Ads Keyword Planner API
 into a universe of **~257,000 raw keyword ideas**, de-duplicated to **~79,000 unique keywords**
 with complete monthly histories. The window is **June 2022 - May 2026 (48 months), US and
 English only.** Each index sums monthly search volume across its keyword basket and is
 normalized so the first month = 100. Charts show a 3-month moving average to suppress
 month-to-month noise; the thin grey line is the raw monthly series.
 
-A note on this edition: unlike the prior study, we **do not reuse any historical search
-volumes** - every number here comes from one fresh pull, so the series is internally
-consistent. Known bot-inflated terms are excluded. This is a US-only report; international
-markets are out of scope by design.
+A note on the data: every number here comes from **one fresh pull** with no spliced-in
+historical volumes, so the series is internally consistent. Known bot-inflated terms are
+excluded. This is a US-only report; international markets are out of scope by design.
 
 {{< pagebreak >}}
 
@@ -151,9 +144,8 @@ The shape of @fig-index is the story of the whole report. Three phases stand out
    towering over the old baseline. Average monthly interest in 2025 was about **49% above
    2024**.
 
-The contrast with the prior edition is instructive. A year ago the story was "recovery
-underway"; with a full extra year of data, it now reads as a **regime change** - the floor has
-moved up, not just the ceiling.
+The deeper point is the floor, not the ceiling: this reads as a **regime change** rather than a
+temporary bounce - the baseline has moved up, not just the seasonal peaks.
 
 # What drove the inflection
 
@@ -315,8 +307,8 @@ Two structural caveats make this more interesting than a simple horse race:
 
 # Home shopping's quiet reinvention: QVC and HSN
 
-One of the most surprising findings - both in the prior edition and again here - is how
-**enormous the QVC/HSN footprint is** inside an organically-grown live-shopping keyword set.
+One of the most surprising findings is how **enormous the QVC/HSN footprint is** inside an
+organically-grown live-shopping keyword set.
 The seed universe was expanded using Google's own "related terms" suggestions, so the keywords
 that surface are the ones Google associates with live shopping in practice. On that basis,
 **more than 15,000** of our keywords relate to QVC or HSN - literally thousands of distinct
@@ -380,9 +372,9 @@ trend in live shopping:
   new buyers up ~285% year on year. It ranked the **#1 shopping app in both the US and UK** in
   2025 and did **$100M+ in live sales on Black Friday alone**.
 
-A year ago the open question was whether Whatnot could keep doubling. The 2025 data says yes:
-it both **doubled GMV and re-rated in the private markets**, while broadening from its
-collectibles roots into 140+ categories. The risk is no longer demand - it is whether supply
+The open question for any company growing this fast is whether it can keep doubling. The 2025
+data says yes: it both **doubled GMV and re-rated in the private markets**, while broadening
+from its collectibles roots into 140+ categories. The risk is no longer demand - it is whether supply
 (sellers, moderation, fulfillment, trust) can scale with it.
 
 **So what is actually driving it?** The data cannot fully answer the "why", but it points at
@@ -498,64 +490,6 @@ A few cross-cutting observations:
 
 {{< pagebreak >}}
 
-# The economics of attention: who advertisers actually pay for
-
-Search interest measures consumer attention. But the Keyword Planner also reports what
-**advertisers** are willing to pay to intercept each query - the top-of-page bid and competition
-index - which is a direct read on the *commercial value* of an audience. Here the data delivers
-one of the report's most counter-intuitive findings.
-
-![Median Google top-of-page bid for each platform's live-shopping keywords. Higher = advertisers compete harder to reach that audience.](figures/fig_commercial.png){#fig-commercial width=92%}
-
-**Whatnot has the audience but not the ad prices.** Despite commanding by far the most consumer
-search, Whatnot's live-shopping keywords carry a **median top-of-page bid of just ~$0.99** -
-the *lowest* of any major platform. eBay (~$8.11) and Facebook (~$10.40) command roughly ten
-times more; TikTok sits in between (~$4.27). Three readings, all interesting:
-
-- **Whatnot is under-monetised by the search-ad market** - a possible arbitrage for marketers
-  who want a highly engaged audience without paying highly competitive keyword prices, and a
-  reminder that Whatnot's own take-rate model (not search ads) is where its value sits.
-- **The B2B goldmine is the TikTok Shop *seller* ecosystem.** The single most expensive
-  live-shopping keywords are not consumer terms at all - they are seller/business terms like
-  *tiktok shop partner center*, *tiktok shop for business* and *tiktok shoppable videos*, with
-  top-of-page bids reaching **$80-$148.** An entire economy of agencies, software and services
-  is bidding to reach TikTok Shop sellers.
-- **The consumer category is still cheap.** A median top-of-page bid of ~$3 and a median
-  competition index of ~12 (out of 100) across live-shopping keywords means this is, in
-  advertising terms, still an *early* market - attention is growing faster than the cost of
-  buying it.
-
-| Keyword | Avg. monthly searches | Top-of-page bid |
-|---|---:|---:|
-| tiktok shoppable videos | 110 | $148.04 |
-| tiktok shop partner center | 880 | $112.09 |
-| tiktok shop for business | 390 | $89.88 |
-| tiktok shop partnership | 390 | $82.55 |
-| seller center tiktok shop | 110 | $74.78 |
-| tiktok shop fulfillment | 590 | $57.10 |
-
-: The most commercially valuable live-shopping keywords are seller/business terms, not consumer ones. {#tbl-cpc tbl-colwidths="[54,24,22]"}
-
-# A phone-first behaviour - and a surprise about who is most mobile
-
-Live shopping is, unsurprisingly, a mobile behaviour: across all live-shopping queries,
-**~67% of searches come from phones**, versus ~30% desktop and ~3% tablet (@fig-device). What
-*is* surprising is the ranking. The most mobile audience of all belongs to **QVC/HSN (~71%
-mobile)** - the 40-year-old television brands - while the **collectibles platforms (Fanatics
-Live ~59%, eBay ~62%) skew the most desktop.**
-
-![Share of search by device, by platform. Live shopping is phone-first everywhere; QVC/HSN is the most mobile, collectibles platforms the most desktop.](figures/fig_device.png){#fig-device width=100%}
-
-The collectibles skew makes sense: card and watch buyers do real research - comparing
-populations, prices and grades - and that research-heavy behaviour pulls toward the desktop.
-QVC/HSN's extreme mobile skew is the more telling number: it confirms that the legacy networks'
-*search* audience is not sitting in front of a TV with a laptop, but reaching for a phone -
-exactly the audience their streaming-and-social pivot is chasing. For platform and ad design,
-the implication is blunt: **the experience has to be built phone-first, and the "lean-back TV"
-mental model is obsolete even for the brands that invented it.**
-
-{{< pagebreak >}}
-
 # What is growing fastest
 
 ![The fastest-growing live-shopping queries, ranked by trend slope (added monthly searches per month). Whatnot, the challengers, seller-intent and trust queries dominate.](figures/fig_growers.png){#fig-growers width=100%}
@@ -580,10 +514,10 @@ cross-cutting finding, and it deserves its own section (see *Trust*, below).
 The headline indices summarize the category, but the most interesting material is often in the
 *texture* of the queries - the specific things people type. Below are several themes that
 surfaced while mining the ~79,000-keyword universe. Some are trending hard, some are flat;
-all of them are revealing about how Americans actually think about live shopping. (As the
-prior study put it: don't dismiss low monthly volumes - roughly 95% of all search terms get
-fewer than 10 searches a month, and that long tail is exactly where a trend hides before it is
-obvious to everyone else.)
+all of them are revealing about how Americans actually think about live shopping. (A guiding
+principle: don't dismiss low monthly volumes - roughly 95% of all search terms get fewer than
+10 searches a month, and that long tail is exactly where a trend hides before it is obvious to
+everyone else.)
 
 ## What people ask
 
@@ -877,9 +811,9 @@ fall out of the patterns above (offered as prompts, not predictions):
 
 Search interest is one lens; it is more convincing when other signals point the same way.
 
-**Other attention signals agree.** The prior edition noted that Whatnot's rise was mirrored in
-YouTube search, Reddit activity, and Wikipedia pageviews - all "up and to the right." The same
-holds for the category broadly: live-shopping subreddits have grown, creator content
+**Other attention signals agree.** Whatnot's rise is mirrored in YouTube search, Reddit
+activity, and Wikipedia pageviews - all "up and to the right." The same holds for the category
+broadly: live-shopping subreddits have grown, creator content
 explaining "how to sell on TikTok Shop / Whatnot" has proliferated, and the trade press now
 covers the space as a category rather than a curiosity. When independent attention signals move
 together, the underlying shift is more likely real than an artefact of one data source.
@@ -937,8 +871,6 @@ The same data reads differently depending on where you sit. A consolidated view:
 - **Treat trust as a product, not a policy.** "Is it legit?" scales with adoption; the platform
   that most visibly solves verification, buyer protection and dispute resolution converts the
   most skeptics into buyers.
-- **Build phone-first, always.** Two-thirds of search is mobile, and even QVC/HSN's audience is
-  the most mobile of all. The lean-back TV model is obsolete.
 
 ## For incumbent retailers and brands
 
@@ -953,9 +885,8 @@ The same data reads differently depending on where you sit. A consolidated view:
 
 ## For sellers and creators
 
-- **You are early, and the tools are cheap.** Median keyword competition is low; the seller
-  ecosystem is forming now. The surge in "how to sell" queries is your competition arriving -
-  but the audience is arriving faster.
+- **You are early.** The seller ecosystem is forming now. The surge in "how to sell" queries is
+  your competition arriving - but the audience is arriving faster.
 - **Mind the economics.** Rising "seller fees" searches signal that take-rates and margins are
   front of mind. Platform choice is increasingly an economic decision, not just an audience one.
 
@@ -965,9 +896,6 @@ The same data reads differently depending on where you sit. A consolidated view:
   roughly two quarters.
 - **Distinguish the flash from the floor.** Event spikes (the TikTok ban) mostly revert; the
   durable signal is the rising baseline.
-- **Note the monetisation gap.** Whatnot's enormous, low-ad-cost audience is both an arbitrage
-  for marketers and a question for the company's own monetisation - while the clearest B2B
-  revenue pool today is the TikTok Shop seller-services ecosystem.
 
 # What search data can - and cannot - tell you
 
@@ -1026,7 +954,6 @@ because each one is an early, decision-relevant signal rather than a lagging hea
 |---|---|---|
 | Live-selling index | Leads consumer interest by ~2 quarters | A sustained roll-over would warn of a slowdown before GMV shows it |
 | TikTok Shop live-GMV share | Live is still only ~14% of its GMV | A rising live share would lift the whole category |
-| Whatnot monetisation & take-rate | Audience is huge; ad value is low | Evidence it can monetise the audience it already owns |
 | StockX Live launch (summer 2026) | A credible, capitalised new entrant | Fast search traction would validate the auction-and-drops model |
 | New-entrant pipeline | Palmstreet showed the lane is open | The next near-zero breakout is the next Palmstreet |
 | "Is it legit?" trajectory | Trust gates mainstream adoption | A sharp acceleration would flag a trust problem at scale |
@@ -1036,7 +963,7 @@ because each one is an early, decision-relevant signal rather than a lagging hea
 : A quarterly watchlist of leading signals. {#tbl-watchlist tbl-colwidths="[26,38,36]"}
 
 Taken together, these dials describe a category that has cleared its existential questions and
-now turns on execution: **supply, trust, and monetisation.** The demand has already inflected;
+now turns on execution: **scaling supply and trust.** The demand has already inflected;
 2026-27 will be decided by how well the industry meets it.
 
 {{< pagebreak >}}
@@ -1048,11 +975,11 @@ now turns on execution: **supply, trust, and monetisation.** The demand has alre
 - **Source:** Google Ads Keyword Planner API (keyword ideas + historical metrics), US
   (location 2840), English (language 1000).
 - **Window:** June 2022 - May 2026 (48 months), retrieved June 2026. The Keyword Planner
-  returns a rolling 48-month window; this edition uses only that fresh window and does not
-  splice in older data.
-- **Seeds -> universe:** ~7,700 curated seeds (prior study + 2026 additions) expanded to
-  ~257,000 raw ideas, de-duplicated (including metric-identical keyword collisions) to ~79,000
-  unique keywords with complete 48-month histories.
+  returns a rolling 48-month window; the analysis uses only that fresh window and splices in no
+  older data.
+- **Seeds -> universe:** ~7,700 curated seeds (covering established and emerging platforms and
+  verticals) expanded to ~257,000 raw ideas, de-duplicated (including metric-identical keyword
+  collisions) to ~79,000 unique keywords with complete 48-month histories.
 - **Indices:** the Live Shopping basket matches *live shop*, *livestream shop*, *live commerce*,
   *live stream shop*, *livestream commerce*; the Live Selling basket matches *live sell*.
   Monthly volumes are summed across the basket and normalized so the first month = 100. Charts
@@ -1071,7 +998,7 @@ The universe was built in stages, each one narrowing toward signal:
 
 | Stage | Count | What it is |
 |---|---:|---|
-| Curated seeds | ~7,700 | Prior-study seeds + 2026 additions (emerging platforms, verticals) |
+| Curated seeds | ~7,700 | Seeds covering established and emerging platforms and verticals |
 | Raw keyword ideas | ~257,000 | Google's keyword-ideas expansion of those seeds |
 | Unique keywords (cleaned) | ~79,000 | After de-duplication, including metric-identical collisions |
 | Modelable keywords | ~57,000 | After dropping near-zero / sparse series |
