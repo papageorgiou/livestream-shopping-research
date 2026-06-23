@@ -1,14 +1,14 @@
 lag_months,corr,meaning
--6,0.39,selling leads
--5,0.239,selling leads
--4,0.057,selling leads
--3,0.177,selling leads
--2,0.358,selling leads
--1,0.068,selling leads
-0,-0.001,same month
-1,-0.248,shopping leads
-2,-0.11,shopping leads
-3,-0.056,shopping leads
-4,-0.056,shopping leads
-5,-0.099,shopping leads
-6,-0.226,shopping leads
+-6,0.509,selling leads
+-5,0.361,selling leads
+-4,0.06,selling leads
+-3,-0.101,selling leads
+-2,0.19,selling leads
+-1,0.064,selling leads
+0,0.11,same month
+1,-0.133,shopping leads
+2,-0.126,shopping leads
+3,-0.044,shopping leads
+4,-0.097,shopping leads
+5,-0.093,shopping leads
+6,-0.219,shopping leads

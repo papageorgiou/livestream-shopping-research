@@ -23,10 +23,11 @@ ls <- readr::read_csv(file.path(data_dir, "ls_index.csv"), show_col_types = FALS
 
 events <- tibble::tribble(
   ~date,         ~lab,                                  ~y,
-  "2023-09-01",  "Sep '23\nTikTok Shop\nlaunches (US)", 150,
-  "2025-01-01",  "Jan '25\nUS TikTok ban\ndrama",       228,
-  "2025-04-01",  "Apr '25\nQVC 24/7 on\nTikTok",        185,
-  "2026-01-01",  "Jan '26\nTikTok US deal\ncloses",     185
+  "2023-09-01",  "Sep '23\nTikTok Shop\nlaunches (US)", 140,
+  "2024-12-01",  "Q4 '24\ninflection\nbegins",          150,
+  "2025-01-01",  "Jan '25\nUS TikTok\nban drama",       120,
+  "2025-04-01",  "Apr '25\nQVC 24/7 on\nTikTok",        172,
+  "2026-01-01",  "Jan '26\nTikTok US deal\ncloses",     172
 ) |> mutate(date = as.Date(date))
 
 trough <- ls |> slice_min(index_value, n = 1)
@@ -207,8 +208,8 @@ p8 <- ggplot(seas, aes(reorder(m, mn), idx, fill = q4)) +
   geom_col(width = 0.72) +
   geom_hline(yintercept = 100, linetype = 2, colour = LS_COL$graymid) +
   geom_text(aes(label = round(idx)), vjust = -0.5, size = 3, colour = LS_COL$ink) +
-  annotate("text", x = "Jan", y = 158, label = "inflated by\nJan '25 event",
-           size = 2.6, colour = LS_COL$red, fontface = "italic", lineheight = 0.9) +
+  annotate("text", x = "Jul", y = 138, label = "shallow\nsummer trough",
+           size = 2.6, colour = LS_COL$graymid, fontface = "italic", lineheight = 0.9) +
   scale_fill_manual(values = c(`FALSE` = LS_COL$graymid, `TRUE` = LS_COL$red)) +
   scale_y_continuous(expand = expansion(c(0, 0.12))) +
   labs(title = "Live shopping has a <span style='color:#CD0000;'>holiday-quarter</span> rhythm",

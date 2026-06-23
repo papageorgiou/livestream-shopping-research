@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(__file__))
-from config import OUTPUT_DIR, FULL_TAG, N_MONTHS
+from config import OUTPUT_DIR, FULL_TAG, N_MONTHS, GLOBAL_EXCLUDE, despike_series
 
 
 def main() -> None:
@@ -96,6 +96,27 @@ def main() -> None:
     df = df[df["avg_monthly_searches"] > 0]
     df = df.drop_duplicates("keyword", keep="first")
     df = df[["keyword", "avg_monthly_searches", months_col]].reset_index(drop=True)
+
+    # ── global exclusions ────────────────────────────────────────────────────────
+    # Ambiguous, non-live-shopping terms removed from the whole universe (see config).
+    n_before = len(df)
+    df = df[~df["keyword"].isin(GLOBAL_EXCLUDE)].reset_index(drop=True)
+    if len(df) < n_before:
+        print(f"Excluded {n_before - len(df)} ambiguous keyword(s): "
+              f"{sorted(GLOBAL_EXCLUDE)}")
+
+    # ── spike rationalization ────────────────────────────────────────────────────
+    # Cap isolated one-month bucket artefacts. The raw series is preserved as
+    # `searches_raw`; `searches_past_months` becomes the despiked series that every
+    # downstream stage (stats, indices, verticals, theme tables) consumes.
+    raw = df[months_col].tolist()
+    df["searches_raw"] = raw
+    df[months_col] = [despike_series(s) for s in raw]
+    n_changed = sum(1 for r, d in zip(raw, df[months_col]) if list(r) != list(d))
+    n_cells = sum(sum(1 for a, b in zip(r, d) if a != b)
+                  for r, d in zip(raw, df[months_col]))
+    print(f"Spike rationalization: capped {n_cells:,} month-cells across "
+          f"{n_changed:,} keywords")
 
     out = os.path.join(OUTPUT_DIR, "df_clean.parquet")
     df.to_parquet(out)

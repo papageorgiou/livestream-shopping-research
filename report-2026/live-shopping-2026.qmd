@@ -6,15 +6,18 @@ date: "2026-06-18"
 abstract: |
   US live shopping has moved from a post-pandemic slump to a genuine breakout. After Meta
   retired its native live-shopping features in 2022-23, category search interest drifted
-  lower and bottomed in mid-2024. It then inflected sharply: average monthly search interest
-  rose roughly 49% in 2025, and the single largest spike on record lined up with the January
-  2025 US TikTok ban drama. This report builds live-shopping and live-selling search
-  indices from a fresh pull of ~80,000 keywords (Google Ads Keyword Planner, June 2022 - May
-  2026, US only) and examines the category from many angles: a
-  platform-rotation and share-of-search view, the rise (and fall) of category-native
-  challengers, the trading-card-led vertical story, a lead-lag test showing sellers move first,
+  lower and bottomed in mid-2024. It then inflected: average monthly search interest
+  rose roughly 39% in 2025, with a sustained step-up that began in Q4 2024 - around the
+  US TikTok ban drama - and held a structurally higher plateau into 2026. This report builds
+  live-shopping and live-selling search indices from a fresh pull of ~80,000 keywords (Google
+  Ads Keyword Planner, June 2022 - May 2026, US only) and examines the category from many
+  angles: a platform-rotation and share-of-search view, the rise (and fall) of category-native
+  challengers, the collectibles-led vertical story, a lead-lag test showing sellers move first,
   and an empirical
-  look at trust ("is it legit?") and how the category's questions are maturing.
+  look at trust ("is it legit?") and how the category's questions are maturing. A note on
+  method: isolated one-month spikes in individual keywords (a known Keyword-Planner bucketing
+  artefact) are rationalized before any index is summed, so the trends here are not driven by
+  single-month anomalies.
 date-format: "MMMM YYYY"
 format:
   typst:
@@ -27,14 +30,16 @@ format:
 # Executive summary
 
 - **The category broke out in 2025.** Average monthly US search interest across a basket of
-  188+ live-shopping queries rose about **49% in 2025 versus 2024** (from roughly 5,840 to
-  8,680 indexed monthly searches), after two years of post-Meta decline that bottomed in
+  196 live-shopping queries rose about **39% in 2025 versus 2024** (from roughly 5,810 to
+  8,080 indexed monthly searches), after two years of post-Meta decline that bottomed in
   mid-2024.
 
-- **The single biggest spike is event-driven.** The index hit its peak in **January 2025**
-  (more than 2.2x the June-2022 baseline), coinciding with the US TikTok ban drama and brief
-  outage. Interest did not collapse afterwards - it settled onto a structurally higher
-  plateau through 2025 and into 2026.
+- **The breakout is a sustained step-up, not a one-month flash.** Interest inflected in **Q4
+  2024** and built through **spring 2025** (the smoothed index peaked around May 2025 at ~1.7x
+  the June-2022 baseline), overlapping the US TikTok ban drama. Crucially it did not revert: it
+  settled onto a structurally higher plateau through 2025 and into 2026. (An apparent
+  single-month "January 2025 spike" in an earlier cut turned out to be a data artefact in one
+  keyword; see the box on rationalizing spikes.)
 
 - **Whatnot is the defining company of this cycle.** Brand search for "whatnot" has grown
   roughly **7x in three years**; it is by far the fastest-growing live-shopping query. Whatnot
@@ -55,8 +60,9 @@ format:
   climbed steadily and now leads, a natural by-product of mainstream growth.
 
 - **Collectibles still lead, but the mix is broadening.** Trading cards / breaks dominate
-  live-shopping vertical search (+135% over the window), while Whatnot's own reporting shows
-  beauty, electronics, jewelry and women's fashion as its fastest-growing GMV categories.
+  live-shopping vertical search (+86% over the window, after rationalizing one-month spikes),
+  while Whatnot's own reporting shows beauty, electronics, jewelry and women's fashion as its
+  fastest-growing GMV categories.
 
 {{< pagebreak >}}
 
@@ -65,9 +71,12 @@ format:
 A quick-reference of the less-obvious findings in this report - the things industry insiders
 may not already know:
 
-1. The famous **January 2025 spike was mostly a flash** - only ~13% of the jump persisted.
-2. ...but it left a **real ~18% lift** in the baseline. Distinguish the flash from the floor.
-3. **Live-selling search leads live-shopping search by ~6 months** - a usable leading indicator.
+1. The much-cited **"January 2025 spike" was largely a data artefact** - one keyword
+   (*tiktok live shopping*) jumped a single bucket for one month; rationalizing it dissolves
+   the spike and reveals the real story.
+2. The genuine signal is a **sustained Q4-2024 step-up** that held into 2026 - a regime change,
+   not a flashbulb. Distinguish a one-month anomaly from a durable floor.
+3. **Live-selling search leads live-shopping search by ~6 months** (r ≈ 0.5) - a usable leading indicator.
 4. **15,000+** QVC/HSN keywords surfaced organically - the "home shopping vs. live shopping"
    academic distinction has collapsed in practice.
 5. QVC/HSN's **legacy terms decline while "official site"/app terms rise** - the audience is
@@ -82,8 +91,8 @@ may not already know:
 10. The category is **rotating, not consolidating** - the concentration index rose only mildly.
 11. **Brand search is escaping the category vocabulary** - people search "whatnot," not
     "whatnot live shopping."
-12. **Trading cards lead live-shopping vertical search, but beauty leads the GMV growth** (+791%
-    on Whatnot) - the on-ramp and the money are different verticals.
+12. **Trading cards lead live-shopping vertical search (+86%), but beauty leads the GMV growth**
+    (+791% on Whatnot) - the on-ramp and the money are different verticals.
 
 {{< pagebreak >}}
 
@@ -134,15 +143,17 @@ The shape of @fig-index is the story of the whole report. Three phases stand out
    on-ramp for mainstream US consumers. Interest drifted down and reached its **lowest point
    in mid-2024**.
 
-2. **The inflection (late 2024 - early 2025).** Interest turned up sharply in Q4 2024 and
-   **peaked in January 2025**, when the US TikTok ban saga and brief app-store outage put
-   social commerce on every front page. This is the clearest example in the data of an
-   external event moving the category.
+2. **The inflection (late 2024 - spring 2025).** Interest turned up in Q4 2024 and built
+   through the first half of 2025, with the smoothed index **peaking around May 2025**. The
+   US TikTok ban saga of January 2025 sits inside this window and clearly added fuel - but the
+   move is a broad, multi-month step-up, not a single-month event spike (an earlier cut showed
+   an outsized January reading that proved to be a one-keyword data artefact; see the box
+   below).
 
 3. **A higher plateau (2025 - 2026).** Crucially, interest did **not** revert to the 2024
    trough. It settled onto a visibly higher band, with seasonal peaks (holiday quarters) now
-   towering over the old baseline. Average monthly interest in 2025 was about **49% above
-   2024**.
+   towering over the old baseline. Average monthly interest in 2025 was about **39% above
+   2024**, and the 2026 months so far sit higher still.
 
 The deeper point is the floor, not the ceiling: this reads as a **regime change** rather than a
 temporary bounce - the baseline has moved up, not just the seasonal peaks.
@@ -156,7 +167,7 @@ cycle, a handful of events align with the turns in @fig-index:
 |------|-------|------------------|
 | Aug 2022 / Mar 2023 | Meta ends Facebook / Instagram live shopping | Removes a mainstream on-ramp; interest drifts down |
 | Sep 2023 | TikTok Shop launches in the US | Re-seeds the category; stabilizes interest |
-| Jan 2025 | US TikTok ban drama + brief outage | Largest single spike on record |
+| Jan 2025 | US TikTok ban drama + brief outage | Added fuel to the Q4-2024 inflection |
 | Feb 2025 | Qurate rebrands to QVC Group ("live social shopping company") | Legacy TV shopping repositions around live |
 | Apr 2025 | QVC launches a 24/7 live channel on TikTok | Reinforces the TikTok-as-storefront narrative |
 | Oct 2025 | Whatnot raises $225M at an $11.5B valuation | Validates the category for investors and press |
@@ -169,23 +180,30 @@ had hung over the single largest social storefront. TikTok Shop's own scale unde
 this matters: **US GMV grew from ~$9B in 2024 to ~$15B in 2025**, and the number of US sellers
 exploded from ~4,450 in mid-2023 to ~475,000 by mid-2025.
 
-## The January 2025 spike as a natural experiment
+## Why we don't trust single-month spikes
 
-The TikTok ban drama is, in effect, a natural experiment: a sudden, exogenous shock to
-attention, after which we can measure what stuck. Decomposing the index around it is revealing,
-and a little humbling for anyone tempted to read every spike as a step-change:
+An earlier cut of this index appeared to show a dramatic **single-month spike in January 2025**,
+which is tempting to read as the TikTok-ban shock made visible. On inspection it was mostly a
+**measurement artefact.** Google's Keyword Planner reports monthly volumes in coarse buckets, so
+a single keyword can jump several buckets for one month and then fully revert. Here, essentially
+the entire apparent January spike came from **one keyword** - *tiktok live shopping* - reading
+**390 in December, 6,600 in January, and 260 in February.** A 17x one-month round-trip in a
+single term is not credible demand; it is the bucketing in action.
 
-- **The spike was huge but mostly transient.** January 2025 reached an index of **228 - about
-  2.4x** the trailing six-month average (Jul-Dec 2024 ≈ 97). That is a genuine attention shock.
-- **Most of it washed out.** Averaging the post-spike plateau (Jun-Dec 2025 ≈ 114) against the
-  pre-spike base shows the category **retained only ~13% of the jump.** The flashbulb faded.
-- **But the residue is real.** That same plateau still sits **~18% above the pre-spike base** -
-  a permanent lift, not a full reversion. And it arrived alongside the *structural* changes
-  (QVC on TikTok, Whatnot's raise, new entrants) that the shock helped catalyse.
+Because the index is a *sum* across the basket, one such artefact can manufacture a category-wide
+"event." So we now **rationalize isolated one-month spikes before summing any index**: a month is
+capped only when it is both a sharp local outlier (several times its neighbouring months) *and*
+large relative to the keyword's own typical level. Genuine sustained rises and recurring seasonal
+peaks - whose neighbouring months are also elevated - are left untouched, and broad market-wide
+moves that lift many keywords together survive. The procedure touched roughly 5,000 keywords
+(about 8,000 month-cells of ~3.8 million) and changed no headline conclusion except to **dissolve
+the phantom January spike.**
 
-The lesson for reading this category: distinguish the **flash** from the **floor.** Event spikes
-are mostly transient; the durable signal is the slow, unglamorous rise in the baseline - which
-is exactly what the moving average in @fig-index isolates.
+The payoff is a more honest picture (@fig-index): the breakout is a **broad Q4-2024-to-spring-2025
+step-up** that holds into 2026, not a one-month flashbulb. The TikTok ban still sits inside that
+window and plausibly added fuel - but the durable signal is the rising *baseline*, which is
+exactly what survives once the artefacts are removed. The lesson for reading any summed search
+index: a spike in one keyword for one month is almost always noise; trust the floor, not the flash.
 
 {{< pagebreak >}}
 
@@ -194,17 +212,18 @@ is exactly what the moving average in @fig-index isolates.
 Beyond the long-run trend, the category has a distinct **annual rhythm** (@fig-seasonality).
 Stripping out the level and averaging each calendar month across the window shows interest
 concentrating in two periods: the **holiday quarter** (October-December, when gifting and
-deal-hunting peak) and a secondary **late-winter/spring** bump.
+deal-hunting peak) and a broad **late-winter/spring** plateau (roughly February-April).
 
-![Average search-interest index by calendar month. Live shopping concentrates in the holiday quarter; the January figure is inflated by the one-off 2025 TikTok-ban spike.](figures/fig_seasonality.png){#fig-seasonality width=92%}
+![Average search-interest index by calendar month. Live shopping is elevated across the holiday quarter and a late-winter/spring window; the summer dip is shallow.](figures/fig_seasonality.png){#fig-seasonality width=92%}
 
-Two caveats make this more interesting than a simple "holidays are big" story. First, the
-towering **January** average is largely an artefact of the one-off 2025 TikTok-ban spike rather
-than a recurring seasonal feature - a good reminder that event shocks and seasonality can be
-confounded. Second, the summer trough (June-September) is shallow and rising year on year,
-which is consistent with the category becoming a **year-round habit** rather than a purely
-gift-driven one. For sellers and platforms, the practical read is that the calendar still
-rewards a Q4 push, but the off-season floor is where the structural growth is showing up.
+Two points make this more interesting than a simple "holidays are big" story. First, the
+profile is **flatter than expected for a gifting category** - April is actually the single
+highest month and the spring window rivals December, which is consistent with live shopping
+becoming a year-round habit rather than a purely holiday-driven one. (Once the one-month
+January-2025 artefact is rationalized away, January is just an ordinary winter month, not a
+spike.) Second, the summer trough (June-September) is shallow and rising year on year. For
+sellers and platforms, the practical read is that the calendar still rewards a Q4 push, but the
+off-season floor is where the structural growth is showing up.
 
 {{< pagebreak >}}
 
@@ -445,25 +464,28 @@ feature.
 # Platform profiles: a field guide
 
 The US live-shopping landscape is best understood not as one market but as a **federation of
-lanes**. The table below maps the main players by their model and primary vertical, with a
-read on where each sits in the search data.
+lanes**. The table below maps the main players by the **role they play in the market** - grouped
+into discovery funnels, category-native destinations, re-platforming incumbents, and the
+challenger/toolkit fringe - with their model, lead verticals, and a plain-language read on where
+each sits in the search data. The **trend** column is the quick takeaway: who is rising, who is
+steady, and who is fading.
 
-| Platform | Model | Primary vertical(s) | Search signal |
-|---|---|---|---|
-| TikTok Shop | Social feed + live | Beauty, fashion, gadgets | Dominant; spikes with news |
-| Whatnot | Live marketplace + auctions | Collectibles, then beauty/fashion | Strongest grower (~7x) |
-| QVC / HSN | Broadcast + streaming + social | Beauty, fashion, home, jewelry | Huge base; re-platforming |
-| Fanatics Live | Live + card breaks | Sports cards, collectibles | Clear uptrend |
-| eBay Live | Live auctions | Cards, watches, handbags, fashion | Rising, expanding geos |
-| Amazon Live | Influencer streams + catalogue | Broad consumer goods | Steady, low LS-specific search |
-| YouTube Shopping | Creator + shoppable video | Broad, creator-led | Emerging |
-| StockX Live | Live drops + auctions | Sneakers, apparel, cards | Launches summer 2026 |
-| NTWRK | Celebrity drops | Streetwear, sneakers, pop culture | Faded from 2023-24 peak |
-| Palmstreet | Live marketplace | Plants, ceramics, niche collectibles | Breakout from ~zero |
-| TalkShopLive | Host-driven shoppable shows | Books, celebrity, CPG | Niche, partnership-led |
-| Popshop Live (CommentSold) | Live marketplace + SMB tooling | SMB retail, fashion | Consolidating |
+| Role | Platform | Model | Lead vertical(s) | Search trend |
+|---|---|---|---|---|
+| **Discovery funnel** | TikTok Shop | Social feed + live | Beauty, fashion, gadgets | Dominant; moves with news |
+| | YouTube Shopping | Creator + shoppable video | Broad, creator-led | Emerging |
+| | Amazon Live | Influencer streams + catalogue | Broad consumer goods | Steady, low LS-specific |
+| **Category-native destination** | Whatnot | Live marketplace + auctions | Collectibles → beauty/fashion | Strongest grower (~7x) |
+| | Fanatics Live | Live + card breaks | Sports cards, collectibles | Rising |
+| | eBay Live | Live auctions | Cards, watches, handbags | Rising; expanding geos |
+| | Palmstreet | Live marketplace | Plants, ceramics, niche | Breakout from ~zero |
+| **Re-platforming incumbent** | QVC / HSN | Broadcast + streaming + social | Beauty, fashion, home, jewelry | Huge base; re-platforming |
+| **Challenger / fringe** | StockX Live | Live drops + auctions | Sneakers, apparel, cards | Launches summer 2026 |
+| | NTWRK | Celebrity drops | Streetwear, sneakers | Faded from 2023-24 peak |
+| | TalkShopLive | Host-driven shoppable shows | Books, celebrity, CPG | Niche, partnership-led |
+| | Popshop (CommentSold) | Live marketplace + SMB tooling | SMB retail, fashion | Consolidating |
 
-: The US live-shopping field, by model and vertical. {#tbl-platforms tbl-colwidths="[20,26,30,24]"}
+: The US live-shopping field, grouped by market role. Read the trend column first: TikTok Shop owns discovery, Whatnot leads the destinations, QVC/HSN is re-platforming a huge legacy base, and the challenger fringe is a mix of newcomers and fade-outs. {#tbl-platforms tbl-colwidths="[20,17,24,24,15]"}
 
 A few cross-cutting observations:
 
@@ -497,8 +519,8 @@ A few cross-cutting observations:
 Ranking every live-shopping-relevant query by its growth slope (@fig-growers) is a compact
 summary of the whole report. Four themes own the leaderboard:
 
-1. **Whatnot** - the brand and its long tail (*whatnot app*, *what is a whatnot*, *whatnot
-   com*, *whatnot seller fees*).
+1. **Whatnot** - the brand and its long tail (*whatnot app*, *whatnot com*, *whatnot shop*,
+   *whatnot seller fees*).
 2. **Challengers** - *fanatics live*, *ebay live*, *palmstreet*, *ebay live auction*.
 3. **Selling** - *tiktok shop seller center*, *how to sell on tiktok shop*, *tiktok shop
    affiliate program*, *how to sell on whatnot*.
@@ -521,20 +543,22 @@ everyone else.)
 
 ## What people ask
 
-The question queries are a window into the category's psychology. The two largest -
-"*what is a whatnot*" and "*is whatnot legit*" - capture the whole arc of a platform going
-mainstream: first people learn what it is, then they ask whether they can trust it.
+The question queries are a window into the category's psychology. The "trust" questions now
+dominate - "*is whatnot legit*", "*is tiktok shop legit*" - capturing a platform going
+mainstream: as new buyers arrive, they ask whether they can trust it before they commit.
+(We exclude "*what is a whatnot*" here: at ~22,000 searches a month it is large, but "a whatnot"
+is also a common piece of furniture - a tiered display stand - so the term is too ambiguous to
+read as live-shopping intent.)
 
 | Keyword | Avg. monthly searches | 4-yr trend |
 |---|---:|---|
-| what is a whatnot | 22,200 | up |
 | is whatnot legit | 14,800 | up |
 | is tiktok shop legit | 5,400 | up |
 | what is qvc | 4,400 | flat |
-| how does tiktok shop work | 1,000 | flat |
 | is whatnot app legit | 1,300 | up |
+| how does tiktok shop work | 1,000 | flat |
 
-: Sample of question queries (399 in the universe). {#tbl-questions tbl-colwidths="[58,24,18]"}
+: Sample of question queries. {#tbl-questions tbl-colwidths="[58,24,18]"}
 
 ## Shoppers and sellers compare platforms
 
@@ -629,12 +653,12 @@ seriously considering selling on.
 | Keyword | Avg. monthly searches | 4-yr trend |
 |---|---:|---|
 | whatnot app | 90,500 | up |
-| what is a whatnot | 22,200 | up |
 | whatnot com | 6,600 | up |
 | whatnot auction | 2,900 | flat |
 | whatnot fees | 1,900 | up |
 | whatnot shop | 1,900 | up |
 | whatnot seller fees | 1,600 | up |
+| whatnot seller | 880 | flat |
 
 : A slice of Whatnot's 125-term brand long tail. {#tbl-wn-tail tbl-colwidths="[58,24,18]"}
 
@@ -648,12 +672,12 @@ phase.
 ![Question queries about live shopping over time, by type. "How" (participation) now dominates "what" (awareness) and "is it legit" (trust).](figures/fig_questions.png){#fig-questions width=100%}
 
 **"How" questions now dominate** - averaging nearly 28,000 searches a month versus ~15,000 for
-trust questions and ~9,000 for "what is it" awareness. This is the signature of a maturing
-market: the centre of gravity has shifted from *understanding* live shopping to *participating*
-in it - how to sell, how to use the apps, how to get started. The awareness phase is largely
-over. The two phases that remain live - participation ("how") and trust ("is it legit") - are
-the two that platforms can most directly influence, and they are the subject of the next two
-sections.
+trust ("is it legit") questions, while bare "what is it" awareness queries have dwindled to a
+few hundred. This is the signature of a maturing market: the centre of gravity has shifted from
+*understanding* live shopping to *participating* in it - how to sell, how to use the apps, how to
+get started. The awareness phase is essentially over. The two phases that remain live -
+participation ("how") and trust ("is it legit") - are the two that platforms can most directly
+influence, and they are the subject of the next two sections.
 
 # Trust: "is it legit?" {#sec-trust}
 
@@ -681,9 +705,14 @@ the platform that answers them best will convert the most skeptics.
 Two complementary views of "what sells live" emerge from the data.
 
 **On the search side, collectibles still lead.** Within a live-shopping context, **trading
-cards and "breaks"** dominate vertical search interest and grew ~135% over the window - the
-single clearest vertical signal. This is the cultural engine that built Whatnot, Fanatics Live
-and eBay Live, and it remains the gateway drug into live shopping.
+cards and "breaks"** dominate vertical search interest and grew ~86% over the window - still the
+single clearest vertical signal, and far larger than any other vertical. (An important caveat on
+magnitude: the card-break vocabulary is full of small, spiky terms - several individual
+keywords showed implausible 20-30x one-month jumps. After rationalizing those bucketing
+artefacts, the vertical's growth comes down from a raw ~135% to ~86%, which is the figure we
+report. The trading-card lead is real, but it was being overstated by single-month spikes.)
+This is the cultural engine that built Whatnot, Fanatics Live and eBay Live, and it remains the
+gateway drug into live shopping.
 
 **On the GMV side, the mix is broadening fast.** Whatnot's own 2025 reporting shows its
 fastest-growing categories by GMV are now well beyond collectibles:
@@ -986,7 +1015,22 @@ now turns on execution: **scaling supply and trust.** The demand has already inf
   use a right-aligned 3-month moving average.
 - **Trend stats:** per-keyword 3-month rolling average and an OLS linear trend (slope, R-squared)
   on keywords with a meaningful signal (max monthly volume > 20, fewer than 47 zero months).
+- **Spike rationalization:** Keyword Planner volumes are reported in coarse buckets, so an
+  individual keyword can jump several buckets for a single month and then fully revert. These
+  isolated one-month spikes are artefacts, not demand, and they distort summed indices and
+  per-vertical totals. Before any index is built, each keyword's monthly series is passed through
+  a despiking filter that caps a month only when it is **both** a sharp local outlier (at least
+  ~4x its larger neighbouring month) **and** large relative to the keyword's own non-zero median
+  (at least ~5x). The cap is set to roughly twice the neighbouring month. Sustained rises and
+  recurring seasonal peaks (whose neighbours are also elevated) and broad market-wide moves
+  (which lift many keywords together) are preserved; only egregious single-keyword, single-month
+  artefacts are tamed. About 5,000 keywords (~8,000 of ~3.8M month-cells) were touched. The most
+  consequential effect was dissolving an apparent January-2025 index spike that was driven almost
+  entirely by one keyword.
 - **Exclusions:** known bot-inflated terms are removed; international markets are out of scope.
+  The term *what is a whatnot* is dropped from every index, trend and table because "a whatnot"
+  is also a common piece of furniture (a tiered display stand), making the query too ambiguous to
+  treat as live-shopping intent.
 - **Theme tables:** keyword samples in the micro-trend tables are drawn from the cleaned
   universe by topic pattern and shown with average monthly searches and a "4-yr trend" label
   derived from the linear-trend slope (up / flat / down). Samples are curated for relevance and
@@ -1064,4 +1108,6 @@ figures are drawn from public reporting and company statements (see sources) and
 - **Market size / adoption / trust**: GetStream; Grand View Research; Statista; eMarketer;
   consumer-trust coverage (Surfshark, TrustDALE, Avast, University of Kentucky ITS).
 
-*Reproducible code and data pipeline: project repository (`pipeline-2026/`, `report-2026/`).*
+*Reproducible code and data pipeline on GitHub:
+[github.com/papageorgiou/livestream-shopping-research](https://github.com/papageorgiou/livestream-shopping-research)
+(the 2026 edition lives in `pipeline-2026/` and `report-2026/`).*
