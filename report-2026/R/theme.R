@@ -30,7 +30,7 @@ LS_CATEGORICAL <- c(
   "#393B79", "#637939", "#8C6D31", "#843C39"
 )
 
-theme_ls <- function(base_size = 11, base_family = "Helvetica Neue") {
+theme_ls <- function(base_size = 22, base_family = "Helvetica Neue") {
   ggthemes::theme_foundation(base_size = base_size, base_family = base_family) +
     theme(
       line = element_line(colour = LS_COL$ink),
@@ -42,12 +42,17 @@ theme_ls <- function(base_size = 11, base_family = "Helvetica Neue") {
       legend.position = "none",
       panel.grid.major = element_line(colour = LS_COL$graymid, linewidth = 0.3),
       panel.grid.minor = element_blank(),
-      plot.title = element_markdown(hjust = 0, size = rel(1.35), face = "bold",
-                                    colour = LS_COL$ink, lineheight = 1.1),
-      plot.subtitle = element_markdown(hjust = 0, size = rel(1.0),
-                                       colour = LS_COL$ink, lineheight = 1.15),
-      plot.caption = element_text(hjust = 0, size = rel(0.75), face = "italic",
-                                  colour = LS_COL$graymid, margin = margin(t = 8)),
+      # textbox variants wrap long titles/captions instead of clipping them,
+      # which matters at the larger base_size used for the report figures.
+      plot.title = ggtext::element_textbox_simple(
+        hjust = 0, size = rel(1.35), face = "bold", colour = LS_COL$ink,
+        lineheight = 1.1, width = grid::unit(1, "npc"), margin = margin(b = 4)),
+      plot.subtitle = ggtext::element_textbox_simple(
+        hjust = 0, size = rel(1.0), colour = LS_COL$ink,
+        lineheight = 1.15, width = grid::unit(1, "npc"), margin = margin(b = 6)),
+      plot.caption = ggtext::element_textbox_simple(
+        hjust = 0, size = rel(0.75), face = "italic", colour = LS_COL$graymid,
+        lineheight = 1.1, width = grid::unit(1, "npc"), margin = margin(t = 8)),
       plot.caption.position = "plot",
       plot.title.position = "plot",
       strip.background = element_rect(fill = "white", colour = LS_COL$ink, linewidth = 0.6),

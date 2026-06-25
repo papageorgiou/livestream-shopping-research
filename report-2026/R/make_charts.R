@@ -41,11 +41,11 @@ p1 <- ggplot(ls, aes(month, index_value)) +
   geom_vline(data = events, aes(xintercept = date), linetype = 3,
              colour = LS_COL$ink, alpha = 0.5) +
   ggrepel::geom_text_repel(data = events, aes(x = date, y = y, label = lab),
-                           inherit.aes = FALSE, size = 3, lineheight = 0.9,
+                           inherit.aes = FALSE, size = 6, lineheight = 0.9,
                            colour = LS_COL$ink, segment.colour = LS_COL$graymid,
                            box.padding = 0.6, min.segment.length = 0, seed = 1) +
   annotate("text", x = trough$month, y = trough$index_value - 14,
-           label = "Mid-2024 trough", size = 3, colour = LS_COL$ink, fontface = "italic") +
+           label = "Mid-2024 trough", size = 6, colour = LS_COL$ink, fontface = "italic") +
   scale_x_date(date_breaks = "6 months", date_labels = "%b %y") +
   scale_y_continuous(limits = c(0, NA)) +
   labs(title = "US <span style='color:#CD0000;'>live shopping</span> search interest: from post-Meta slump to a 2025 breakout",
@@ -114,7 +114,7 @@ gmv <- tibble::tribble(
 
 p4b <- ggplot(gmv, aes(date, gmv)) +
   geom_col(fill = LS_COL$whatnot, colour = "#C9A800", width = 250) +
-  geom_text(aes(label = paste0("$", gmv, "B")), vjust = -0.5, size = 3, colour = LS_COL$ink) +
+  geom_text(aes(label = paste0("$", gmv, "B")), vjust = -0.5, size = 6, colour = LS_COL$ink) +
   scale_y_continuous(labels = scales::dollar_format(suffix = "B"), expand = expansion(c(0, 0.15))) +
   scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
   labs(title = "Whatnot gross merchandise value (GMV)",
@@ -181,7 +181,7 @@ tr <- readr::read_csv(file.path(data_dir, "trust_terms.csv"), show_col_types = F
 
 p7 <- ggplot(tr, aes(month, roll_avg, colour = keyword)) +
   geom_line(linewidth = 1.3) +
-  scale_x_date(date_breaks = "6 months", date_labels = "%b %y") +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
   scale_y_continuous(labels = scales::comma) +
   scale_colour_manual(values = c("is whatnot legit" = "#C9A800",
                                  "is whatnot app legit" = "#E377C2",
@@ -192,7 +192,7 @@ p7 <- ggplot(tr, aes(month, roll_avg, colour = keyword)) +
   theme_ls() +
   ggrepel::geom_text_repel(
     data = tr |> group_by(keyword) |> slice_max(month, n = 1),
-    aes(label = keyword), nudge_x = 60, hjust = 0, direction = "y", size = 2.8,
+    aes(label = keyword), nudge_x = 60, hjust = 0, direction = "y", size = 5.6,
     segment.colour = NA) +
   coord_cartesian(clip = "off") +
   theme(plot.margin = margin(10, 90, 8, 10))
@@ -207,9 +207,9 @@ seas <- ls |>
 p8 <- ggplot(seas, aes(reorder(m, mn), idx, fill = q4)) +
   geom_col(width = 0.72) +
   geom_hline(yintercept = 100, linetype = 2, colour = LS_COL$graymid) +
-  geom_text(aes(label = round(idx)), vjust = -0.5, size = 3, colour = LS_COL$ink) +
+  geom_text(aes(label = round(idx)), vjust = -0.5, size = 6, colour = LS_COL$ink) +
   annotate("text", x = "Jul", y = 138, label = "shallow\nsummer trough",
-           size = 2.6, colour = LS_COL$graymid, fontface = "italic", lineheight = 0.9) +
+           size = 5.2, colour = LS_COL$graymid, fontface = "italic", lineheight = 0.9) +
   scale_fill_manual(values = c(`FALSE` = LS_COL$graymid, `TRUE` = LS_COL$red)) +
   scale_y_continuous(expand = expansion(c(0, 0.12))) +
   labs(title = "Live shopping has a <span style='color:#CD0000;'>holiday-quarter</span> rhythm",
@@ -224,9 +224,9 @@ p9 <- ggplot(ll, aes(lag_months, corr, fill = corr > 0)) +
   geom_col(width = 0.7) +
   geom_vline(xintercept = 0, colour = LS_COL$ink, linewidth = 0.4) +
   annotate("text", x = -4.2, y = max(ll$corr) * 1.04, label = "selling leads shopping",
-           size = 3, colour = LS_COL$red, fontface = "bold") +
+           size = 6, colour = LS_COL$red, fontface = "bold") +
   annotate("text", x = 4.2, y = max(ll$corr) * 1.04, label = "shopping leads selling",
-           size = 3, colour = LS_COL$graymid) +
+           size = 6, colour = LS_COL$graymid) +
   scale_fill_manual(values = c(`TRUE` = LS_COL$red, `FALSE` = LS_COL$graymid)) +
   scale_x_continuous(breaks = -6:6) +
   labs(title = "Sellers move first: <span style='color:#CD0000;'>live-selling</span> search leads live-<b>shopping</b> by about two quarters",
@@ -262,7 +262,7 @@ cv <- readr::read_csv(file.path(data_dir, "commercial_by_platform.csv"), show_co
 p11 <- ggplot(cv, aes(median_top_bid, platform)) +
   geom_segment(aes(x = 0, xend = median_top_bid, yend = platform), colour = LS_COL$graymid, linewidth = 0.8) +
   geom_point(size = 4, colour = LS_COL$red) +
-  geom_text(aes(label = scales::dollar(median_top_bid)), hjust = -0.4, size = 3, colour = LS_COL$ink) +
+  geom_text(aes(label = scales::dollar(median_top_bid)), hjust = -0.4, size = 6, colour = LS_COL$ink) +
   scale_x_continuous(labels = scales::dollar, expand = expansion(c(0, 0.18))) +
   labs(title = "The monetisation gap: <span style='color:#CD0000;'>Whatnot</span> has the audience, not the ad prices",
        subtitle = "Median Google top-of-page bid for that platform's live-shopping keywords. Higher = advertisers pay more to reach that audience.",
@@ -332,7 +332,7 @@ p15 <- ggplot(gmv_cat, aes(growth, category)) +
   geom_segment(aes(x = 0, xend = growth, yend = category), colour = LS_COL$graymid, linewidth = 0.9) +
   geom_point(size = 5, colour = LS_COL$whatnot) +
   geom_point(size = 5, shape = 21, colour = "#C9A800", fill = NA, stroke = 1) +
-  geom_text(aes(label = paste0("+", growth, "%")), hjust = -0.35, size = 3.2, colour = LS_COL$ink) +
+  geom_text(aes(label = paste0("+", growth, "%")), hjust = -0.35, size = 6.4, colour = LS_COL$ink) +
   scale_x_continuous(labels = function(x) paste0("+", x, "%"), expand = expansion(c(0, 0.16))) +
   labs(title = "Beyond collectibles: where Whatnot's <span style='background-color:#FFF351;'>&nbsp;dollars&nbsp;</span> are growing fastest",
        subtitle = "Whatnot GMV growth by category, 2025 vs 2024 (company reporting). The mass-retail verticals are scaling hardest.",
