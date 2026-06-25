@@ -1,4 +1,4 @@
-# Build a 10-slide LinkedIn carousel (PDF) on US live-shopping search interest.
+# Build a 9-slide LinkedIn carousel (PDF) on US live-shopping search interest.
 # Each slide: 1080 x 1350 px (4:5 portrait) -> combined into one PDF.
 # Run: Rscript carousel-2026/build_carousel.R
 
@@ -103,8 +103,6 @@ wn   <- read_csv(file.path(DATA, "whatnot_terms.csv"), show_col_types = FALSE) |
 emer <- read_csv(file.path(DATA, "emergence.csv"), show_col_types = FALSE)
 tg   <- read_csv(file.path(DATA, "top_growers.csv"), show_col_types = FALSE) |>
   filter(keyword != "whatnot") |> arrange(desc(slope)) |> head(8)
-vi   <- read_csv(file.path(DATA, "vertical_index.csv"), show_col_types = FALSE) |>
-  group_by(vertical) |> summarise(avg = mean(searches), .groups = "drop") |> arrange(desc(avg))
 tt   <- read_csv(file.path(DATA, "trust_terms.csv"), show_col_types = FALSE) |>
   mutate(month = as.Date(month)) |> group_by(month) |>
   summarise(s = sum(roll_avg, na.rm = TRUE), .groups = "drop")
@@ -253,29 +251,7 @@ s7 <- s7 + ins(p7, 0.03, 0.08, 0.99, 0.75)
 save_slide(s7, 7)
 
 # =====================================================================
-# SLIDE 8 — TRADING CARDS LEAD
-# =====================================================================
-vip <- vi |> head(5) |> mutate(name = factor(vertical, levels = rev(vertical)))
-p8 <- ggplot(vip, aes(avg, name)) +
-  geom_col(aes(fill = vertical == "Trading cards / TCG"), width = 0.64) +
-  geom_text(aes(label = comma(round(avg))), hjust = -0.18,
-            family = HEAD, fontface = "bold", size = 5.6, color = INK) +
-  scale_fill_manual(values = c(`TRUE` = RED, `FALSE` = "#C9CCD1")) +
-  scale_x_continuous(limits = c(0, max(vip$avg) * 1.2)) +
-  theme_chart(16) +
-  theme(panel.grid.major.x = element_blank(), axis.text.x = element_blank())
-s8 <- canvas() |> chrome("The Vertical") |>
-  txt(6, 89, "Trading Cards Run the Category", 10.8, INK, HEAD, "bold") |>
-  txt(6, 79, "Avg. monthly live-shopping search interest by vertical.", 5.6, GRAY)
-vmult <- round(vip$avg[1] / vip$avg[2])
-s8 <- s8 +
-  annotate("text", x = 6, y = 17, label = paste0("Trading cards draw ~", vmult, "× the search of the next vertical."),
-           hjust = 0, vjust = 0, family = BODY, fontface = "bold", size = 5.2, color = REDD)
-s8 <- s8 + ins(p8, 0.03, 0.22, 0.99, 0.75)
-save_slide(s8, 8)
-
-# =====================================================================
-# SLIDE 9 — "IS IT LEGIT?" (trust line)
+# SLIDE 8 — "IS IT LEGIT?" (trust line)
 # =====================================================================
 p9 <- ggplot(tt, aes(month, s)) +
   geom_area(fill = SOFT, color = NA) +
@@ -290,10 +266,10 @@ s9 <- s9 +
   annotate("text", x = 6, y = 75, label = "~30×", hjust = 0, vjust = 1, family = NUM, size = 17, color = RED) +
   annotate("text", x = 35, y = 72.5, label = "more trust-checking searches —\na sign the category has gone\nmainstream", hjust = 0, vjust = 1, family = BODY, size = 5, color = INK, lineheight = 1)
 s9 <- s9 + ins(p9, 0.04, 0.08, 0.99, 0.58)
-save_slide(s9, 9)
+save_slide(s9, 8)
 
 # =====================================================================
-# SLIDE 10 — TAKEAWAY
+# SLIDE 9 — TAKEAWAY
 # =====================================================================
 s10 <- canvas() |> chrome("The Takeaway") |>
   txt(6, 87, "What This Means", 13, INK, HEAD, "bold") |>
@@ -302,7 +278,7 @@ bullets <- c(
   paste0("Category search interest rose ~", yoy_25, "% in 2025."),
   "Sellers move first — supply-side search leads by ~2 quarters.",
   "Whatnot keeps growing — up 6.6× in three years.",
-  "Trading cards lead; trust is going mainstream."
+  "Trust-checking searches are going mainstream."
 )
 yb0 <- 62
 for (i in seq_along(bullets)) {
@@ -313,12 +289,12 @@ for (i in seq_along(bullets)) {
 s10 <- s10 +
   annotate("text", x = 6, y = 17, label = "Alex Papageorgiou", hjust = 0, vjust = 0, family = HEAD, fontface = "bold", size = 6, color = INK) +
   annotate("text", x = 6, y = 12.5, label = "Follow for more search-trend breakdowns  >", hjust = 0, vjust = 0, family = BODY, size = 4.8, color = RED)
-save_slide(s10, 10)
+save_slide(s10, 9)
 
 # =====================================================================
 # COMBINE -> PDF
 # =====================================================================
-files <- file.path(SLD, sprintf("slide_%02d.png", 1:10))
+files <- file.path(SLD, sprintf("slide_%02d.png", 1:9))
 imgs  <- image_read(files)
 pdf_path <- file.path(OUT, "live-shopping-carousel.pdf")
 image_write(image_join(imgs), pdf_path, format = "pdf")

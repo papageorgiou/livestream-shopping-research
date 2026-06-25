@@ -59,10 +59,10 @@ format:
   legitimacy fears spiked after its 2023 US launch and then eased; **"is whatnot legit"** has
   climbed steadily and now leads, a natural by-product of mainstream growth.
 
-- **Collectibles still lead, but the mix is broadening.** Trading cards / breaks dominate
-  live-shopping vertical search (+86% over the window, after rationalizing one-month spikes),
-  while Whatnot's own reporting shows beauty, electronics, jewelry and women's fashion as its
-  fastest-growing GMV categories.
+- **Collectibles still lead, but the mix is broadening.** Trading cards / breaks have the
+  deepest, fastest-growing live-shopping vocabulary (+86% over the window, after rationalizing
+  one-month spikes), while Whatnot's own reporting shows beauty, electronics, jewelry and
+  women's fashion as its fastest-growing GMV categories.
 
 {{< pagebreak >}}
 
@@ -91,8 +91,8 @@ may not already know:
 10. The category is **rotating, not consolidating** - the concentration index rose only mildly.
 11. **Brand search is escaping the category vocabulary** - people search "whatnot," not
     "whatnot live shopping."
-12. **Trading cards lead live-shopping vertical search (+86%), but beauty leads the GMV growth**
-    (+791% on Whatnot) - the on-ramp and the money are different verticals.
+12. **Trading-card search has the deepest live-shopping vocabulary and grew +86%, but beauty
+    leads the GMV growth** (+791% on Whatnot) - the on-ramp and the money are different verticals.
 
 {{< pagebreak >}}
 
@@ -247,14 +247,14 @@ A sample of the seller-learning vocabulary makes the point concrete. These are n
 head terms; they are the quiet, high-intent queries of people deciding to become live sellers.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| tiktok shop seller center | 18,100 | up |
-| how to sell on tiktok shop | 4,400 | up |
-| how to sell on whatnot | 2,900 | up |
-| whatnot seller fees | 1,600 | up |
-| how to start a tiktok shop | 1,000 | flat |
-| whatnot seller | 880 | flat |
-| how to start selling on whatnot | 260 | flat |
+|---|---:|:-:|
+| tiktok shop seller center | 18,100 | ↑ |
+| how to sell on tiktok shop | 4,400 | ↑ |
+| how to sell on whatnot | 2,900 | ↑ |
+| whatnot seller fees | 1,600 | ↑ |
+| how to start a tiktok shop | 1,000 | → |
+| whatnot seller | 880 | → |
+| how to start selling on whatnot | 260 | → |
 
 : Sample of seller-intent queries. The full universe contains ~100 distinct "how to sell"-style live-shopping terms. {#tbl-sellers tbl-colwidths="[60,22,18]"}
 
@@ -339,15 +339,15 @@ association data quietly erases that line: in the market's mental model, QVC and
 live shopping. That is the "academic conclusions vs. market reality" gap in one statistic.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| qvc | 3,350,000 | down |
-| hsn | 1,000,000 | down |
-| qvc com official site | 201,000 | up |
-| qvc live | 40,500 | down |
-| qvc tv live | 40,500 | down |
-| hsn official site | 9,900 | up |
-| qvc com official site shopping online | 12,100 | up |
-| hsn app | 2,400 | flat |
+|---|---:|:-:|
+| qvc | 3,350,000 | ↓ |
+| hsn | 1,000,000 | ↓ |
+| qvc com official site | 201,000 | ↑ |
+| qvc live | 40,500 | ↓ |
+| qvc tv live | 40,500 | ↓ |
+| hsn official site | 9,900 | ↑ |
+| qvc com official site shopping online | 12,100 | ↑ |
+| hsn app | 2,400 | → |
 
 : A small sample of the 15,000+ QVC/HSN-related queries in the universe. {#tbl-qvc tbl-colwidths="[58,24,18]"}
 
@@ -475,7 +475,7 @@ steady, and who is fading.
 | **Discovery funnel** | TikTok Shop | Social feed + live | Beauty, fashion, gadgets | Dominant; moves with news |
 | | YouTube Shopping | Creator + shoppable video | Broad, creator-led | Emerging |
 | | Amazon Live | Influencer streams + catalogue | Broad consumer goods | Steady, low LS-specific |
-| **Category-native destination** | Whatnot | Live marketplace + auctions | Collectibles → beauty/fashion | Strongest grower (~7x) |
+| **Category-native destination** | Whatnot | Live marketplace + auctions | Collectibles, now beauty/fashion | Strongest grower (~7x) |
 | | Fanatics Live | Live + card breaks | Sports cards, collectibles | Rising |
 | | eBay Live | Live auctions | Cards, watches, handbags | Rising; expanding geos |
 | | Palmstreet | Live marketplace | Plants, ceramics, niche | Breakout from ~zero |
@@ -551,12 +551,12 @@ is also a common piece of furniture - a tiered display stand - so the term is to
 read as live-shopping intent.)
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| is whatnot legit | 14,800 | up |
-| is tiktok shop legit | 5,400 | up |
-| what is qvc | 4,400 | flat |
-| is whatnot app legit | 1,300 | up |
-| how does tiktok shop work | 1,000 | flat |
+|---|---:|:-:|
+| is whatnot legit | 14,800 | ↑ |
+| is tiktok shop legit | 5,400 | ↑ |
+| what is qvc | 4,400 | → |
+| is whatnot app legit | 1,300 | ↑ |
+| how does tiktok shop work | 1,000 | → |
 
 : Sample of question queries. {#tbl-questions tbl-colwidths="[58,24,18]"}
 
@@ -568,10 +568,10 @@ that matters is overwhelmingly **Whatnot vs. eBay** - the collectibles incumbent
 live-native challenger.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| whatnot vs ebay | 390 | flat |
-| ebay vs whatnot | 90 | flat |
-| qvc alternative shopping | 10 | flat |
+|---|---:|:-:|
+| whatnot vs ebay | 390 | → |
+| ebay vs whatnot | 90 | → |
+| qvc alternative shopping | 10 | → |
 
 : Comparison queries. {#tbl-compare tbl-colwidths="[58,24,18]"}
 
@@ -583,12 +583,12 @@ distinct from any single destination app. Whatnot's own app query dwarfs them, a
 in the US the destination is winning over the toolkit.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| whatnot app | 90,500 | up |
-| hsn app | 2,400 | flat |
-| live shopping platform | 1,900 | up |
-| livestream shopping app | 1,300 | flat |
-| live stream shopping platform | 1,300 | flat |
+|---|---:|:-:|
+| whatnot app | 90,500 | ↑ |
+| hsn app | 2,400 | → |
+| live shopping platform | 1,900 | ↑ |
+| livestream shopping app | 1,300 | → |
+| live stream shopping platform | 1,300 | → |
 
 : Tools / apps / platform queries (245 in the universe). {#tbl-tools tbl-colwidths="[58,24,18]"}
 
@@ -599,11 +599,11 @@ rather than a few big ones. That fragmentation is itself the signal: this is a d
 community with its own language ("breaks", "rips", specific sets), not a casual audience.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| whatnot card | 480 | flat |
-| whatnot sports cards | 390 | flat |
-| live sports card breaks | 320 | flat |
-| card breaks live | 320 | flat |
+|---|---:|:-:|
+| whatnot card | 480 | → |
+| whatnot sports cards | 390 | → |
+| live sports card breaks | 320 | → |
+| card breaks live | 320 | → |
 
 : Sample of live card-breaking queries. {#tbl-cards tbl-colwidths="[58,24,18]"}
 
@@ -615,10 +615,10 @@ behaviour in its own right. These are the kind of small, weird, fast-growing sig
 to precede the next mainstream vertical.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| palmstreet | 6,600 | up |
-| palmstreet app | 1,000 | up |
-| live thrifting | 210 | flat |
+|---|---:|:-:|
+| palmstreet | 6,600 | ↑ |
+| palmstreet app | 1,000 | ↑ |
+| live thrifting | 210 | → |
 
 : Sample of niche-format queries. {#tbl-niche tbl-colwidths="[58,24,18]"}
 
@@ -631,11 +631,11 @@ abroad (Douyin, Kuaishou, Taobao Live, Shopee) appear in US search almost entire
 terms are tiny.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| douyin | 90,500 | up |
-| kuaishou | 5,400 | up |
-| live shopee | 320 | flat |
-| taobao live shopping | 10 | flat |
+|---|---:|:-:|
+| douyin | 90,500 | ↑ |
+| kuaishou | 5,400 | ↑ |
+| live shopee | 320 | → |
+| taobao live shopping | 10 | → |
 
 : US search for international live-commerce apps - mostly download curiosity, not shopping. {#tbl-intl tbl-colwidths="[58,24,18]"}
 
@@ -651,14 +651,14 @@ kind of vocabulary that only accretes around a platform people are seriously usi
 seriously considering selling on.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| whatnot app | 90,500 | up |
-| whatnot com | 6,600 | up |
-| whatnot auction | 2,900 | flat |
-| whatnot fees | 1,900 | up |
-| whatnot shop | 1,900 | up |
-| whatnot seller fees | 1,600 | up |
-| whatnot seller | 880 | flat |
+|---|---:|:-:|
+| whatnot app | 90,500 | ↑ |
+| whatnot com | 6,600 | ↑ |
+| whatnot auction | 2,900 | → |
+| whatnot fees | 1,900 | ↑ |
+| whatnot shop | 1,900 | ↑ |
+| whatnot seller fees | 1,600 | ↑ |
+| whatnot seller | 880 | → |
 
 : A slice of Whatnot's 125-term brand long tail. {#tbl-wn-tail tbl-colwidths="[58,24,18]"}
 
@@ -705,14 +705,17 @@ the platform that answers them best will convert the most skeptics.
 Two complementary views of "what sells live" emerge from the data.
 
 **On the search side, collectibles still lead.** Within a live-shopping context, **trading
-cards and "breaks"** dominate vertical search interest and grew ~86% over the window - still the
-single clearest vertical signal, and far larger than any other vertical. (An important caveat on
-magnitude: the card-break vocabulary is full of small, spiky terms - several individual
-keywords showed implausible 20-30x one-month jumps. After rationalizing those bucketing
-artefacts, the vertical's growth comes down from a raw ~135% to ~86%, which is the figure we
-report. The trading-card lead is real, but it was being overstated by single-month spikes.)
-This is the cultural engine that built Whatnot, Fanatics Live and eBay Live, and it remains the
-gateway drug into live shopping.
+cards and "breaks"** have the deepest and fastest-growing vocabulary - dozens of distinct,
+intent-rich terms that grew ~86% over the window, the single clearest vertical signal. (Two
+caveats on magnitude. First, the raw bucket total is *not* a clean cross-vertical ranking: the
+card vocabulary is captured by ~40 specific keywords while other verticals contribute only a
+handful, so any direct "X times larger than the next vertical" comparison mostly reflects how
+finely each category is enumerated, not true relative demand. Second, the card-break terms are
+small and spiky - several individual keywords showed implausible 20-30x one-month jumps. After
+rationalizing those bucketing artefacts, the vertical's growth comes down from a raw ~135% to
+the ~86% we report.) What is robust is the *depth and momentum* of the vocabulary: this is the
+cultural engine that built Whatnot, Fanatics Live and eBay Live, and it remains the gateway
+drug into live shopping.
 
 **On the GMV side, the mix is broadening fast.** Whatnot's own 2025 reporting shows its
 fastest-growing categories by GMV are now well beyond collectibles:
@@ -773,13 +776,13 @@ flavoured. Auctions are worth tracking as a leading indicator: they tend to attr
 engaged users first.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| live auction | 40,500 | down |
-| ebay live auction | 2,900 | up |
-| live auction sites | 2,400 | up |
-| live auction app | 720 | flat |
-| whatnot live auction | 390 | flat |
-| live bidding | 260 | flat |
+|---|---:|:-:|
+| live auction | 40,500 | ↓ |
+| ebay live auction | 2,900 | ↑ |
+| live auction sites | 2,400 | ↑ |
+| live auction app | 720 | → |
+| whatnot live auction | 390 | → |
+| live bidding | 260 | → |
 
 : Sample of live-auction queries (334 in the universe). Note that some "live auction" terms also refer to offline auctions. {#tbl-auction tbl-colwidths="[58,24,18]"}
 
@@ -801,14 +804,14 @@ thrifting* and *whatnot live auction* are small today but describe behaviours th
 large tomorrow.
 
 | Keyword | Avg. monthly searches | 4-yr trend |
-|---|---:|---|
-| whatnot auction | 2,900 | flat |
-| palmstreet app | 1,000 | up |
-| live sports card breaks | 320 | flat |
-| how to start selling on whatnot | 260 | flat |
-| live thrifting | 210 | flat |
-| whatnot live auction | 390 | flat |
-| taobao live shopping | 10 | flat |
+|---|---:|:-:|
+| whatnot auction | 2,900 | → |
+| palmstreet app | 1,000 | ↑ |
+| live sports card breaks | 320 | → |
+| how to start selling on whatnot | 260 | → |
+| live thrifting | 210 | → |
+| whatnot live auction | 390 | → |
+| taobao live shopping | 10 | → |
 
 : A walk down the long tail. {#tbl-longtail tbl-colwidths="[58,24,18]"}
 
@@ -1041,7 +1044,7 @@ now turns on execution: **scaling supply and trust.** The demand has already inf
 The universe was built in stages, each one narrowing toward signal:
 
 | Stage | Count | What it is |
-|---|---:|---|
+|---|---:|:-:|
 | Curated seeds | ~7,700 | Seeds covering established and emerging platforms and verticals |
 | Raw keyword ideas | ~257,000 | Google's keyword-ideas expansion of those seeds |
 | Unique keywords (cleaned) | ~79,000 | After de-duplication, including metric-identical collisions |

@@ -61,11 +61,24 @@
   }
 
   // ---- tables: lighter, more legible -----------------------------------------
-  set table(stroke: (x, y) => (
-    top: if y == 0 { 0.8pt + brand_ink } else { 0pt },
-    bottom: 0.5pt + brand_rule,
-  ), inset: 6pt)
+  // Branded header band, subtle zebra striping, and a crisp rule under the head.
+  set table(
+    inset: (x: 7pt, y: 5pt),
+    stroke: (x, y) => (
+      top: if y == 0 { 0.9pt + brand_ink } else { 0pt },
+      bottom: if y == 0 { 0.9pt + brand_ink } else { 0.5pt + brand_rule },
+    ),
+    fill: (x, y) => if y == 0 { brand_light }
+                    else if calc.odd(y) { rgb("#FAFAFA") }
+                    else { white },
+  )
   show table.cell.where(y: 0): set text(weight: "bold", size: 9.5pt, fill: brand_ink)
+
+  // Trend arrows in tables: color-code direction (these glyphs appear only in
+  // trend cells, so document-wide show rules are safe here).
+  show "↑": set text(fill: rgb("#1B7A3D"), weight: "bold")  // rising
+  show "↓": set text(fill: brand_red, weight: "bold")       // falling
+  show "→": set text(fill: brand_gray, weight: "bold")      // flat
 
   // ================= TITLE PAGE =================
   v(40pt)
