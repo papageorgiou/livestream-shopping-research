@@ -1,6 +1,3 @@
-Live Shopping Search Index
-
-
 ![Live Shopping Index](live_shopping_annot_600dpi_202512.png)
 
 # Live Shopping Search Index

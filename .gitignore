@@ -13,3 +13,5 @@ report-2026/live-shopping-2026.typ
 __pycache__/
 .venv/
 .DS_Store
+# carousel slide PNGs are intermediates of build_carousel.R (the PDF is the deliverable)
+carousel-2026/slides/
